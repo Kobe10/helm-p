@@ -1,0 +1,26 @@
+# Create by Xie Xianbin, For centos7 jdk8 tomcat8 image
+# v 1.0.0
+
+# base image
+FROM jdk8_tomcat8:j8t8
+
+# remark
+MAINTAINER  fuzq "fuzq@bjshfb.com"
+
+# Dockerfile build cache
+ENV REFRESHED_AT 2018-09-26
+
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+#install cronie
+RUN yum -y install cronie
+
+#install crontabs
+RUN yum -y install crontabs
+
+RUN sed -i '/session    required   pam_loginuid.so/c\#session    required   pam_loginuid.so' /etc/pam.d/crond
+
+RUN echo "*/1 * * * * /bin/echo 'it works!' >> /root/test.log" >> /var/spool/cron/root
+
+ENV LC_ALL C.UTF-8
+ENTRYPOINT ["./docker-entrypoint.sh"]

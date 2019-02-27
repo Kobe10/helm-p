@@ -1,0 +1,1106 @@
+body, div, span, input, table, tr, td, th, tbody, thead, ul, li {
+    margin: 0;
+    padding: 0;
+    font: 14px "微软雅黑";
+}
+
+ul, li {
+    list-style: none;
+}
+
+input {
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    border: none;
+}
+
+table tr td.tdTitle {
+    text-align: right;
+    background-color: #f9f9f9;
+}
+
+table tr td.tdResult {
+    text-align: left;
+    padding-left: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    position: absolute;
+    width: 800px;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -150px;
+}
+
+.form-group {
+    margin-top: 40px;
+    position: relative;
+}
+
+.form-group label {
+    display: inline-block;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    background: #fff;
+    margin-right: -4px;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    padding-left: 5px;
+    line-height: 50px;
+    height: 50px;
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 73%;
+    border-left: 1px solid #bbb;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: yellow;
+}
+
+input:focus {
+    outline: none;
+    background-color: yellow;
+}
+
+.btn-primary {
+    border-radius: 10px;
+}
+
+.btn {
+    height: 55px;
+    width: 250px;
+    display: inline-block;
+    font-size: 21px;
+    color: #fff;
+    border: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: "Microsoft YaHei", Arial, SimSun;
+    margin-left: 37%;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    background-color: #f86801;
+    outline: none;
+}
+
+.btn:hover {
+    background: #B70303;
+    border-radius: 10px;
+}
+
+.return {
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    text-align: center;
+    font-size: 20px;
+    background: #f1f1f1;
+}
+
+.return a {
+    color: #003bb3;
+    cursor: pointer;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+
+.return a:hover {
+    color: #4d7fb3;
+}
+
+.messageLogging table {
+    width: 100%;
+}
+
+.messageLogging table tr {
+    height: 55px;
+    line-height: 55px;
+    letter-spacing: 2px;
+    text-align: right;
+    color: #000;
+}
+
+.messageLogging table tr td {
+    border: 1px solid #ddd;
+    font-size: 19px;
+}
+
+.bottomList {
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #ddd;
+    border-top: none;
+    background-color: #f9f9f9;
+}
+
+.drop-down {
+    position: absolute;
+    width: 9%;
+    border: 1px solid #ccc;
+    left: 80px;
+    display: block;
+    z-index: 100;
+    background: #fff;
+    top: 150px;
+}
+
+.drop-down a {
+    cursor: pointer;
+    display: block;
+}
+
+.drop-down a:hover {
+    background: #acd6f4;
+}
+
+.bottomList span.schTitle {
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.bottomList span.schValue {
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.bottomList input {
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #ddd;
+    width: 9%;
+    font-size: 18px;
+}
+
+input[name=inquiry] {
+    width: 4%;
+    color: #ffffff;
+    background: #48b3ff;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+    height: 35px;
+    outline: none;
+}
+
+input[name=inquiry]:hover {
+    border-radius: 5px;
+}
+
+.rightList {
+    float: right;
+    display: block;
+    overflow: hidden;
+    padding: 10px 20px 0 0;
+    text-decoration: none;
+}
+
+.rightList span {
+    padding: 0 0 0 20px;
+    float: left;
+    display: block;
+    overflow: hidden;
+    padding: 0 0 0 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.rightList .control {
+    background: url(../image/icon-opt-btn.png) no-repeat;
+    background-position: -3px -796px;
+}
+
+.rightList .control.active {
+    background: url(../image/icon-opt-btn.png) no-repeat;
+    background-position: -3px -828px;
+}
+
+.rightList .list {
+    background: url(../image/icon-opt-btn.png) no-repeat;
+    background-position: -3px -733px;
+}
+
+.rightList .list.active {
+    background: url(../image/icon-opt-btn.png) no-repeat;
+    background-position: -3px -761px;
+}
+
+/*下部列表*/
+#stateQuery {
+    width: 100%;
+}
+
+#stateQuery thead {
+    background: #e3eef4
+}
+
+#stateQuery thead tr {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#stateQuery thead tr td {
+    border: 1px solid #ddd;
+    border-top: none;
+    font-size: 18px;
+}
+
+#stateQuery tbody tr {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.selected {
+    background: #3FAEE9;
+}
+
+#stateQuery tbody tr td {
+    border: 1px solid #ECE9E9;
+}
+
+#popupLayer {
+    display: none;
+    min-width: 100px;
+    min-height: 100px;
+    padding: 5px;
+    border: 1px solid #B8B8B8;
+    box-shadow: 2px 2px 12px #DDD;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+}
+
+#popupLayer li {
+    height: 26px;
+    width: 200px;
+}
+
+#ch003 {
+    position: relative;
+    width: 100px;
+    height: 40px;
+}
+
+/*建筑信息,回迁房源里的图形*/
+table.build {
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+table.build td {
+    padding: 4px 0px 4px 2px;
+    height: 55px;
+    text-align: center;
+}
+
+table.new_build td {
+    height: 40px !important;
+}
+
+table.build th {
+    padding: 4px 0px 4px 2px;
+    height: 25px;
+    text-align: center;
+}
+
+table.build th.floor, table.build td.floor {
+    width: 50px;
+}
+
+table.build tr.data td {
+    min-width: 100px;
+    line-height: 25px;
+}
+
+table.new_build tr.data td {
+    min-width: 50px !important;
+}
+
+table.build tr.data td:last-child {
+    line-height: 25px;
+}
+
+table.build tr.data td:first-child {
+    line-height: 25px;
+}
+
+table.build tr.data td label {
+    display: block;
+    height: 50px;
+    min-width: 100px;
+    font-size: 12px;
+    overflow: hidden;
+    margin: 1px 5px 1px 5px;
+}
+
+table.new_build tr.data td label {
+    height: 50px !important;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+table.build tr.data td label:hover {
+    cursor: pointer;
+}
+
+/*建筑信息,回迁房源里的图形*/
+table.build {
+    border-bottom: 1px solid #5fa4df;
+}
+
+table.build td {
+    border: 1px solid #5fa4df;
+}
+
+table.build th {
+    border: 1px solid #5fa4df;
+}
+
+table.build th.unit {
+    background: url("../image/floor.png") no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    color: white;
+}
+
+table.build th.floor, table.build td.floor {
+    background-color: #edf7ff;
+}
+
+table.build tr.data td {
+    border-bottom: 1px solid #c9c9c9;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+table.build tr.data td:last-child {
+    border-bottom: 1px solid #c9c9c9;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid #5fa4df !important;
+}
+
+table.build tr.data td:first-child {
+    border: 1px solid #5fa4df;
+}
+
+table.build tr.data td label {
+    border: 1px solid #efefef;
+}
+
+table.build tr.data td label:hover {
+    background-color: #c6bb81 !important;
+}
+
+table.build tr.data td label.used {
+    background-color: #ffff00;
+}
+
+table.build tr.data td label.selected {
+    background: url("../image/icon-opt-btn.png") no-repeat center center;
+}
+
+/*图表信息*/
+table.list {
+    border-collapse: collapse;
+    border: solid 1px #ededed;
+}
+
+table.list thead tr {
+    height: 35px;
+    background-color: #e3eef4;
+}
+
+table.list th {
+    border-right: solid 1px #D0D0D0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+table.list td {
+    border-right: solid 1px #ededed;
+    border-bottom: solid 1px #ededed;
+}
+
+table.list th.asc, .grid .gridHeader th.asc {
+    background-position: right -34px;
+}
+
+table.list th.desc, .grid .gridHeader th.desc {
+    background-position: right -68px;
+}
+
+table.list tbody {
+    background-color: #fff;
+}
+
+table.list tbody tr {
+    height: 34px;
+    text-align: center;
+}
+
+table.list .right {
+    text-align: right;
+}
+
+table.list .trbg {
+    background-color: #F8F8F8;
+}
+
+table.list .hot {
+    background-color: #fff5c0;
+}
+
+table.list .hover {
+    background-color: #e4f5ff;
+}
+
+table.list .selected {
+    background-color: #7cc5e5;
+    border-color: #b8d0d6;
+}
+
+table.list a {
+    color: #3C7FB1;
+    font-size: 11px !important;
+    line-height: 20px;
+}
+
+table.list a:hover {
+    text-decoration: underline;
+    line-height: 20px;
+}
+
+table.list td span.error {
+    z-index: -1
+}
+
+table.nowrap tbody tr {
+    border-bottom: solid 1px #ededed;
+}
+
+/*编辑，刷新，修改等。如：房源管理——>条件检索等。取消、确定、拍照*/
+.panelBar {
+    background: #f7f7f7;
+    border: 1px solid #e9e9e9;
+}
+
+.panelBar {
+    height: 40px;
+    width: 100% !important;
+    box-sizing: border-box;
+    line-height: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: block;
+    overflow: hidden;
+    background-repeat: repeat-x;
+}
+
+.panelBar .pages {
+    float: left;
+    overflow: hidden;
+    height: 21px;
+    padding: 2px 5px;
+}
+
+.panelBar .pages span {
+    float: left;
+    line-height: 21px;
+}
+
+.panelBar .pages span u {
+    color: #438eb9;
+}
+
+.panelBar .pages span u {
+    text-decoration: none;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.panelBar ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.panelBar ul {
+    height: 30px;
+    padding: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.panelBar li {
+    float: left;
+    display: block;
+    overflow: hidden;
+}
+
+.panelBar ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+/*上下翻页*/
+.panelBar .pages span u {
+    color: #438eb9;
+}
+
+.pagination a, .pagination li a {
+    color: black;
+}
+
+.pagination a, .pagination li.hover a {
+    padding: 0 6px;
+}
+
+.pagination {
+    float: right;
+    padding-left: 7px;
+    background-position: 0 -199px;
+}
+
+.pagination li, .pagination li.hover {
+    padding: 0 0 0 5px;
+    background-position: 0 -100px;
+}
+
+.pagination a, .pagination li.hover a, .pagination li span {
+    float: left;
+    display: block;
+    text-decoration: none;
+    line-height: 23px;
+    background-position: 100% -150px;
+}
+
+.pagination li.selected a {
+    font-weight: bold;
+}
+
+.pagination span, .pagination li.hover span {
+    float: left;
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.pagination li .first span, .panelBar li .previous span {
+    padding: 0 0 0 10px;
+}
+
+.pagination li .next span, .panelBar li .last span {
+    padding: 0 10px 0 0;
+}
+
+.pagination li .first span {
+    background-position: 0 -244px;
+}
+
+.pagination li .previous span {
+    background-position: 0 -294px;
+}
+
+.pagination li .next span {
+    background-position: 100% -344px;
+}
+
+.pagination li .last span {
+    background-position: 100% -394px;
+}
+
+.pagination li .last {
+    margin-right: 5px;
+}
+
+.pagination li.disabled span, .grid .pagination li.disabled a {
+    background-position: 0 100px;
+    cursor: default;
+}
+
+.pagination li.disabled .first span {
+    background-position: 0 -444px;
+}
+
+.pagination li.disabled .previous span {
+    background-position: 0 -494px;
+}
+
+.pagination li.disabled .next span {
+    background-position: 100% -544px;
+}
+
+.pagination li.disabled .last span {
+    background-position: 100% -594px;
+}
+
+.pagination li.disabled .last {
+    margin-right: 5px;
+}
+
+.pagination li.jumpto {
+    padding: 2px 2px 0 7px;
+    background-position: 0 -200px;
+}
+
+.pagination li.jumpto .textInput {
+    float: left;
+    width: 30px;
+    padding: 1px;
+}
+
+.pagination li.jumpto .goto {
+    height: 24px;
+    float: left;
+    display: block;
+    overflow: hidden;
+    width: 16px;
+    text-indent: -1000px;
+    cursor: pointer;
+}
+
+.pagination a, .pagination li.hover a {
+    background: #fff;
+    border: 1px solid #deddde;
+}
+
+.pagination li.selected a {
+    background: #3c90c8 !important;
+    border-color: #3c90c8;
+    color: #fff;
+}
+
+.pagination li.disabled {
+    background: none;
+}
+
+.pagination li.disabled span span {
+    color: #666;
+}
+
+.pagination li.jumpto .textInput {
+    border-color: #acaeaf;
+}
+
+.pagination li.jumpto .goto {
+    background: url(../image/page-go.png) no-repeat center center;
+    border: 1px solid #dedede;
+    border-left: none;
+}
+
+.button span {
+    padding: 0 10px 0 5px;
+    background-position: 100% -50px;
+}
+
+.panelBar ul {
+    height: 30px;
+    padding: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.panelBar li {
+    float: left;
+    display: block;
+    overflow: hidden;
+}
+
+.panelBar ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.panelBar .toolBar li.line {
+    display: block;
+    overflow: hidden;
+    width: 12px;
+    padding: 0;
+    text-indent: -1000px;
+    background-position: 5px -200px;
+}
+
+.panelBar .toolBar a, .panelBar .toolBar li.hover a {
+    float: left;
+    display: block;
+    overflow: hidden;
+    padding: 0 5px 0 0;
+    text-decoration: none;
+    background-position: 100% -150px;
+}
+
+.panelBar .toolBar span, .panelBar .toolBar li.hover span {
+    padding: 0 0 0 20px;
+    float: left;
+    display: block;
+    overflow: hidden;
+    padding: 0 0 0 20px;
+    cursor: pointer;
+}
+
+.panelBar .toolBar a.edit span {
+    background-position: -3px -46px;
+}
+
+.panelBar .toolBar a.delete span {
+    background-position: -3px -87px;
+}
+
+.panelBar .toolBar a.icon span {
+    background-position: 0 -844px;
+}
+
+.panelBar .toolBar a.add span {
+    background-position: -2px -8px;
+}
+
+.panelBar .toolBar a.delete-more span {
+    background-position: -3px -127px;
+}
+
+.panelBar .toolBar a.save span {
+    background-position: -3px -167px;
+}
+
+.panelBar .toolBar a.import span {
+    background-position: -3px -208px;
+}
+
+.panelBar .toolBar a.export span {
+    background-position: -3px -248px;
+}
+
+.panelBar .toolBar a.close span {
+    background-position: -3px -289px;
+}
+
+.panelBar .toolBar a.hight-level span {
+    background-position: -3px -327px;
+}
+
+.panelBar .toolBar a.lower-level span {
+    background-position: -3px -367px;
+}
+
+.panelBar .toolBar a.reflesh span {
+    background-position: -3px -407px;
+}
+
+.panelBar .toolBar a.new-area span {
+    background-position: -3px -447px;
+}
+
+.panelBar .toolBar a.new-house span {
+    background-position: -3px -487px;
+}
+
+.panelBar .toolBar a.print span {
+    background-position: -3px -527px;
+}
+
+.panelBar .toolBar a.left span {
+    background-position: -3px -567px;
+}
+
+.panelBar .toolBar a.right span {
+    background-position: -3px -607px;
+}
+
+.panelBar .toolBar a.find span {
+    background-position: -3px -649px;
+}
+
+.panelBar .toolBar a.edit span {
+    background-position: -3px -690px;
+}
+
+.panelBar .toolBar a.list span {
+    background-position: -3px -728px;
+}
+
+.panelBar .toolBar a.list span:hover {
+    background-position: -3px -756px;
+}
+
+.panelBar .toolBar a.list span.active {
+    background-position: -3px -756px;
+}
+
+.panelBar .toolBar a.pic span {
+    background-position: -3px -792px;
+}
+
+.panelBar .toolBar a.pic span:hover {
+    background-position: -3px -823px;
+}
+
+.panelBar .toolBar a.pic span.active {
+    background-position: -3px -823px;
+}
+
+.panelBar .toolBar a.sum span {
+    background-position: -3px -886px;
+}
+
+.panelBar .toolBar a.sum span:hover {
+    background-position: -3px -858px;
+}
+
+.panelBar .toolBar a.sum span.active {
+    background-position: -3px -858px;
+}
+
+.panelBar .toolBar a.cancel span {
+    background-position: -6px -953px;
+}
+
+.panelBar .toolBar a.ensure span {
+    background-position: -6px -921px;
+}
+
+.panelBar .toolBar a.photo span {
+    background-position: -6px -981px;
+}
+
+.panelBar .toolBar a.text span {
+    padding: 0 0 0 5px;
+    font-weight: bold;
+}
+
+.panelBar .toolBar a.filter span {
+    background-position: -3px -1009px;
+}
+
+.panelBar .toolBar a.filter span:hover {
+    background-position: -3px -1033px;
+    font-weight: bold;
+}
+
+.panelBar .toolBar a.filter span.active {
+    background-position: -3px -1033px;
+    font-weight: bold;
+}
+
+.panelBar .toolBar a.design span {
+    background-position: -3px -1061px;
+}
+
+.panelBar .toolBar a.design span:hover {
+    background-position: -3px -1088px;
+    font-weight: bold;
+}
+
+.panelBar .toolBar a.design span.active {
+    background-position: -3px -1088px;
+    font-weight: bold;
+}
+
+.panelBar .toolBar a.result span {
+    background-position: -6px -1114px;
+}
+
+.panelBar .toolBar a.result span:hover {
+    background-position: -6px -1143px;
+    font-weight: bold;
+}
+
+/*上一页，下一页*/
+.panelBar .pages {
+    float: left;
+    overflow: hidden;
+    height: 21px;
+    padding: 2px 5px;
+}
+
+.panelBar .pages span u {
+    text-decoration: none;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.panelBar .pages span {
+    float: left;
+    line-height: 21px;
+}
+
+/*上下翻页*/
+.pagination .textInput {
+    height: 20px;
+    line-height: 20px;
+}
+
+.pagination a, .pagination li.hover a {
+    padding: 0 6px;
+}
+
+.panelBar .pages select {
+    float: left;
+    margin: 0 3px;
+    font-size: 12px;
+}
+
+.pagination {
+    float: right;
+    padding-left: 7px;
+    background-position: 0 -199px;
+}
+
+.pagination li, .pagination li.hover {
+    padding: 0 0 0 5px;
+    background-position: 0 -100px;
+}
+
+.pagination a, .pagination li.hover a, .pagination li span {
+    float: left;
+    display: block;
+    text-decoration: none;
+    line-height: 23px;
+    background-position: 100% -150px;
+}
+
+.pagination li.selected a {
+    font-weight: bold;
+}
+
+.pagination span, .pagination li.hover span {
+    float: left;
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.pagination li .first span, .panelBar li .previous span {
+    padding: 0 0 0 10px;
+}
+
+.pagination li .next span, .panelBar li .last span {
+    padding: 0 10px 0 0;
+}
+
+.pagination li .first span {
+    background-position: 0 -244px;
+}
+
+.pagination li .previous span {
+    background-position: 0 -294px;
+}
+
+.pagination li .next span {
+    background-position: 100% -344px;
+}
+
+.pagination li .last span {
+    background-position: 100% -394px;
+}
+
+.pagination li .last {
+    margin-right: 5px;
+}
+
+.pagination li.disabled span, .grid .pagination li.disabled a {
+    background-position: 0 100px;
+    cursor: default;
+}
+
+.pagination li.disabled .first span {
+    background-position: 0 -444px;
+}
+
+.pagination li.disabled .previous span {
+    background-position: 0 -494px;
+}
+
+.pagination li.disabled .next span {
+    background-position: 100% -544px;
+}
+
+.pagination li.disabled .last span {
+    background-position: 100% -594px;
+}
+
+.pagination li.disabled .last {
+    margin-right: 5px;
+}
+
+.pagination li.jumpto {
+    padding: 2px 2px 0 7px;
+    background-position: 0 -200px;
+}
+
+.pagination li.jumpto .textInput {
+    float: left;
+    width: 30px;
+    padding: 1px;
+}
+
+.pagination li.jumpto .goto {
+    height: 24px;
+    float: left;
+    display: block;
+    overflow: hidden;
+    width: 16px;
+    text-indent: -1000px;
+    cursor: pointer;
+}
+
+/*建筑图 右上角 图例*/
+.showTip, .hideTip {
+    width: 25px;
+    height: 34px;
+    background: url(../image/pannel-opt-bg.png) 0 -70px no-repeat;
+}
+
+.hideTip:hover {
+    background-position: 0 -105px;
+}
+
+.showTip {
+    background-position: -4px -205px;
+}
+
+.showTip:hover {
+    background-position: -4px -240px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

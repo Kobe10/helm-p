@@ -1,0 +1,24 @@
+{
+  "name": "helm-jsmpeg",
+  "version": "1.0.0",
+  "description": "视频流转发服务",
+  "author": "<linql@shfb.com>",
+  "private": true,
+  "scripts": {
+    "dev": "node websocket-relay.js helm-bwz 8081 8082",
+    "pm2": "pm2 start ./processes.json"
+  },
+  "dependencies": {
+    "ws": "^6.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

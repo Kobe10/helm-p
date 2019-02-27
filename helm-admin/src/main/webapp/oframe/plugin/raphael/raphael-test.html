@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="prjRegViewR">
+</div>
+<div id="prjRegView">
+
+</div>
+
+<script type="text/javascript" src="../jquery/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="raphael-min.js"></script>
+<script type="text/javascript" src="raphael.json.js"></script>
+<script>
+
+    (function (R) {
+        R.el.draggable = function (move, start, up) {
+            this._ui = this._ui || {};
+            var that = this;
+            this._ui.onMove = R.is(move, 'function') ?
+                    move : function (distanceX, distanceY, x, y, deltaX, deltaY) {
+                that.translate(deltaX, deltaY);
+            };
+            this._ui.onStart = R.is(start, 'function') ? start : function (x, y) {
+            };
+            function onMove(distanceX, distanceY, x, y) {
+                var deltaX = x - that._ui.lastX;
+                var deltaY = y - that._ui.lastY;
+                that._ui.lastX = x;
+                that._ui.lastY = y;
+                that._ui.onMove(distanceX, distanceY, x, y, deltaX, deltaY);
+                that.paper.safari();
+            };
+            function onStart(x, y) {
+                that._ui.lastX = x;
+                that._ui.lastY = y;
+                that._ui.onStart(x, y);
+            };
+            return this.drag(onMove, onStart, up);
+        };
+    })(Raphael);
+
+    var R2 = null;
+    var prePoint = null;
+    var firstPoint = null;
+
+    function repaint(jsonObj) {
+        R2.clear();
+        R2.fromJSON(jsonObj, function (el, elData) {
+            if (elData.myType == "123") {
+                el.draggable();
+            }
+            return el;
+        });
+
+    }
+
+    function init() {
+        var R = Raphael("prjRegView", 400, 300);
+        R2 = Raphael("prjRegViewR", 400, 300);
+        var p = R.path('M0 20L100 0L50 80Z');
+        p.attr({"fill": "green", 'opacity': 0.8, 'cursor': 'pointer', "title": "hello"});
+        p.draggable();
+        p.mouseover(function (event) {
+            this.attr({"fill": 'blue'});
+        });
+        p.data("myType", "123");
+        p.mousemove(function (event) {
+            this.attr({"fill": 'green'});
+            var json = R.toJSON(function (el) {
+                var data = {};
+                data.myType = el.data("myType");
+                return data;
+            });
+            repaint(json);
+        });
+    }
+    init();
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>ofranme控件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="generator" content="www.leipi.org"/>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-ie6.css">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/ie.css">
+    <![endif]-->
+    <script src="../../../../../oframe/plugin/jquery/eland.jquery.min.js" type="text/javascript"></script>
+    <link href="../../../../../oframe/themes/common/core.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="../../../../../oframe/themes/blue/style.css" id="theme" rel="stylesheet" type="text/css"
+          media="screen"/>
+    <link href="../../../../../oframe/plugin/uploadify/css/uploadify.css" rel="stylesheet" type="text/css"
+          media="screen"/>
+    <link href="../../../../../oframe/plugin/jquery/css/colorPicker.css" rel="stylesheet" type="text/css"
+          media="screen"/>
+    <link href="../../../../../oframe/themes/common/print.css" rel="stylesheet" type="text/css" media="print"/>
+    <link href="../../../../../oframe/themes/common/ieHack.css" rel="stylesheet" type="text/css" media="print"/>
+    <script type="text/javascript" src="../../dialogs/internal.js"></script>
+    <script src="../../../../../oframe/plugin/dwz/dwz.min.js" type="text/javascript"></script>
+    <script src="../../../../../oframe/plugin/system/system.min.js"  type="text/javascript"></script>
+    <script src="js/oframedesign.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="content">
+    <input id="hidname" type="hidden"/>
+    <table class="border">
+        <input type="hidden" id="shfbplugins" style="width: 80%;float: left" value="oframeform:checkbox"/>
+        <tr>
+            <th width="20%">
+                <lable>绑定实体：</lable>
+            </th>
+            <td>
+                <input type="text" id="entity" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>绑定属性：</lable>
+            </th>
+            <td>
+                <input type="text" id="property" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>属性真实值：</lable>
+            </th>
+            <td>
+                <input type="text" id="relname" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>控件样式：</lable>
+            </th>
+            <td>
+                <input type="text" id="gclass" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>是否可编辑：</lable>
+            </th>
+            <td>
+                <input type="text" id="editable" style="width: 80%;float: left" value="true"/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>查询条件(json)：</lable>
+            </th>
+            <td>
+                <input type="text" id="condition" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>指定查询条件：</lable>
+            </th>
+            <td>
+                <input type="text" id="rel" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>参数编码：</lable>
+            </th>
+            <td>
+                <input type="text" id="itemCd" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <lable>分隔符：</lable>
+            </th>
+            <td>
+                <input type="text" id="split" style="width: 80%;float: left" value=""/>
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    var oNode = null, thePlugins = 'oframecheckbox';
+    window.onload = function () {
+        if (UE.plugins[thePlugins].editdom) {
+            oNode = UE.plugins[thePlugins].editdom;
+            //获取span中的属性并赋值
+            var entity = oNode.getAttribute('entity');
+            var property = oNode.getAttribute('property');
+            var relname = oNode.getAttribute('relname');
+            var gclass = oNode.getAttribute('gclass');
+            var editable = oNode.getAttribute('editable');
+            var condition = oNode.getAttribute('condition');
+            var rel = oNode.getAttribute('rel');
+            var itemCd = oNode.getAttribute('itemCd');
+            var split = oNode.getAttribute('split');
+
+            $G('entity').value = entity;
+            $G('property').value = property;
+            $G('relname').value = relname;
+            $G('gclass').value = gclass;
+            $G('editable').value = editable;
+            $G('condition').value = condition;
+            $G('rel').value = rel;
+            $G('itemCd').value = itemCd;
+            $G('split').value = split;
+        }
+    };
+    dialog.oncancel = function () {
+        if (UE.plugins[thePlugins].editdom) {
+            delete UE.plugins[thePlugins].editdom;
+        }
+    };
+    dialog.onok = function () {
+        if (!oNode) {
+            try {
+                var html = oframedesign.fnParseOptions();
+                editor.execCommand('insertHtml', html);
+                oframedesign.initCoverHeight($(editor.body));
+                return true;
+            } catch (e) {
+                try {
+                    editor.execCommand('error');
+                } catch (e) {
+                    alert('控件异常，请联系管理员反馈或寻求帮助！');
+                }
+                return false;
+            }
+        } else {
+            oNode = UE.plugins[thePlugins].editdom;
+            var toEditObjStr = "<div>" + oframedesign.fnParseOptions() + "</div>";
+            var toEditObj = $(toEditObjStr).find("span.oframeplugin");
+            $(oNode).after(toEditObj);
+            oframedesign.initCoverHeight(toEditObj);
+            oNode.remove();
+            delete UE.plugins[thePlugins].editdom;
+            return true;
+        }
+    };
+</script>
+</body>
+</html>

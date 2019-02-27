@@ -1,0 +1,50 @@
+# 本地环境配置
+
+upload:
+  #图片上传
+  image:
+    path: ../uploadEview
+    max-size: 10  #单位MB
+    accept-type:
+      - image/png
+      - image/jpeg
+      - image/jpg
+
+server:
+  port: 9086
+  servlet:
+    context-path: /vfclient
+
+spring:
+    application:
+      name: vfclient
+    http:
+      encoding:
+        force: true
+        charset: UTF-8
+        enabled: true
+    servlet:
+      multipart:
+        max-file-size: 10MB
+        max-request-size: 100MB
+#   ffmpeg 推流途径  测试环境外部配置路径
+    profiles:
+      path: /data/vf-client/config
+
+logging:
+#  level:
+#    org.springframework.web: ERROR
+#
+#    com.bjshfb.vf.client: debug
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  config: ${spring.profiles.path}/log4j2.xml
+
+# 这里配置的是本地的地址  端口号默认8080
+com:
+  bjshfb:
+      url: http://114.248.78.102:9100/helm-admin
+      client : bwz
+      prjCd : 143
+      nettyAddr: 192.168.1.200

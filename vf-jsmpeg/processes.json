@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "vf-jsmpeg",
+      "cwd": "",
+      "script": "websocket-relay.js",
+      "args": "vf-jsmpeg 8081 8082",
+      "watch": true,
+      "instances": 1,
+      "exec_mode": "cluster",
+      "error_file": "../logs/app-err.log",
+      "out_file": "../logs/app-out.log",
+      "log_date_format": "YYYY-MM-DD HH:mm Z"
+    }
+  ]
+}

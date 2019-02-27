@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>文本框</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="generator" content="www.leipi.org"/>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-ie6.css">
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/ie.css">
+    <![endif]-->
+    <script type="text/javascript" src="../../dialogs/internal.js"></script>
+    <script type="text/javascript">
+        /* Thank you by
+         http://www.alt-tag.com/blog/2006/02/ie-dom-bugs/ */
+        function createElement(type, name) {
+            var element = null;
+            try {
+                element = document.createElement('<' + type + ' name="' + name + '">');
+            } catch (e) {
+            }
+            if (element == null) {
+                element = document.createElement(type);
+                element.name = name;
+            }
+            return element;
+        }
+    </script>
+</head>
+<body>
+<div class="content">
+    <table class="table table-bordered table-striped table-hover">
+        <tr>
+            <th><span>控件名称(name)</span><span class="label label-important">*</span></th>
+            <th><span>默认值(value)</span></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="name" placeholder="必填项"></td>
+            <td><input type="text" id="value" placeholder="无则不填"></td>
+        </tr>
+        <tr>
+            <th><span>自定义样式(style)</span></th>
+            <th><span>系统样式(class)</span></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="style" placeholder="无则不填"></td>
+            <td><input type="text" id="class" placeholder="无则不填"></td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    var oNode = null, thePlugins = 'textarea';
+    window.onload = function () {
+        if (UE.plugins[thePlugins].editdom) {
+            oNode = UE.plugins[thePlugins].editdom;
+            var gValue = '';
+            if (oNode.getAttribute('value'))
+                gValue = oNode.getAttribute('value').replace(/&quot;/g, "\"");
+            var gName = oNode.getAttribute('name').replace(/&quot;/g, "\""), gStyle = oNode.getAttribute('style'), gClass = oNode.getAttribute('class');
+            gValue = gValue == null ? '' : gValue;
+            gName = gName == null ? '' : gName;
+            $G('value').value = gValue;
+            $G('name').value = gName;
+            $G('style').value = gStyle;
+            $G('class').value = gClass;
+        }
+    };
+    dialog.oncancel = function () {
+        if (UE.plugins[thePlugins].editdom) {
+            delete UE.plugins[thePlugins].editdom;
+        }
+    };
+    dialog.onok = function () {
+        if ($G('name').value == '') {
+            alert('请输入控件名称');
+            return false;
+        }
+        var gValue = $G('value').value.replace(/\"/g, "&quot;"), gName = $G('name').value.replace(/\"/g, "&quot;"), gStyle = $G('style').value, gClass = $G('class').value;
+
+        if (!oNode) {
+            try {
+                oNode = createElement('textarea', gName);
+                oNode.setAttribute('style', gStyle);
+                oNode.setAttribute('class', gClass);
+                oNode.setAttribute('value', gValue);
+                oNode.setAttribute('name', gName);
+                oNode.setAttribute('shfbPlugins', thePlugins);
+                editor.execCommand('insertHtml', oNode.outerHTML);
+            } catch (e) {
+                try {
+                    editor.execCommand('error');
+                } catch (e) {
+                    alert('控件异常，请向管理员反馈或寻求帮助！');
+                }
+                return false;
+            }
+        } else {
+            oNode.setAttribute('name', gName);
+            oNode.setAttribute('value', $G('value').value);
+            oNode.setAttribute('style', $G('style').value);
+            oNode.setAttribute('class', $G('class').value);
+            delete UE.plugins[thePlugins].editdom;
+        }
+    };
+</script>
+</body>
+</html>

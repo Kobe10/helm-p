@@ -1,0 +1,238 @@
+<formhtml>
+    <!-- input -->
+    <component>
+        <name>input</name>
+        <cd>FORM_INPUT_DISPLAY</cd>
+        <desc>域变量绑定的输入框</desc>
+        <class></class>
+        <attribute>
+            <name>entity</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+        </attribute>
+        <editHtml>
+            <![CDATA[
+                    <input name="${entity}_${property}_${primarykey}" type="${type}" value="${form_data}" class="textInput ${class}" ${others}/>
+                ]]>
+        </editHtml>
+        <viewHtml>
+            <![CDATA[
+                   <label name="${entity}_${property}_${primarykey}" value="${form_data}" class="${class}" ${others} disabled="disabled" >${form_data}</label>
+                ]]>
+        </viewHtml>
+        <changeHtml>
+            <![CDATA[
+                   <label name="${entity}_${property}_${primarykey}" title="旧值：${form_data}" class="${class}" ${others} disabled="disabled">${afterValue}</label>
+                ]]>
+        </changeHtml>
+    </component>
+
+    <!-- select -->
+    <component>
+        <name>select</name>
+        <cd>FORM_SELECT_DISPLAY</cd>
+        <desc>域变量绑定选择框</desc>
+        <class></class>
+        <attribute>
+            <name>entity</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+        </attribute>
+        <editHtml>
+            <![CDATA[
+                    <select name="${entity}_${property}_${primarykey}" class="${class}" ${others}>
+            ]]>
+        </editHtml>
+        <viewHtml>
+            <![CDATA[
+                    <span name="${entity}_${property}_${primarykey}" class="${class}" ${others}>${form_data}</span>
+            ]]>
+        </viewHtml>
+        <changeHtml>
+            <![CDATA[
+                    <span name="${entity}_${property}_${primarykey}" title="旧值：${form_data}"  class="${class}" ${others}>${afterValue}</span>
+            ]]>
+        </changeHtml>
+    </component>
+
+    <!-- textarea -->
+    <component>
+        <name>textarea</name>
+        <cd>FORM_TEXTAREA_DISPLAY</cd>
+        <desc></desc>
+        <class></class>
+        <attribute>
+            <name>entity</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+        </attribute>
+        <editHtml>
+            <![CDATA[
+                    <textarea name="${entity}_${property}_${primarykey}" class="${class}" ${others}>${form_data}</textarea>
+            ]]>
+        </editHtml>
+        <viewHtml>
+            <![CDATA[
+                    <label name="${entity}_${property}_${primarykey}" class="${class}" ${others} disabled="disabled">${form_data}</label>
+            ]]>
+        </viewHtml>
+        <changeHtml>
+            <![CDATA[
+                    <textarea name="${entity}_${property}_${primarykey}" class="${class}" ${others} disabled="disabled">${form_data}</textarea>
+            ]]>
+        </changeHtml>
+    </component>
+
+    <!-- checkbox -->
+    <component>
+        <name>checkbox</name>
+        <cd>FORM_CHECKBOX_DISPLAY</cd>
+        <desc></desc>
+        <class></class>
+        <attribute>
+            <name>entity</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+        </attribute>
+        <editHtml>
+            <![CDATA[
+                    <input type="checkbox" name="${entity}_${property}_${primarykey}" class="${class}" ${ischecked} ${others} value="${form_data}" /><label>${realValue}</label>
+            ]]>
+        </editHtml>
+        <viewHtml>
+            <![CDATA[
+                    <input type="checkbox" name="${entity}_${property}_${primarykey}" class="${class}" ${ischecked} ${others} disabled="disabled" value="${form_data}" /><label>${realValue}</label>
+            ]]>
+        </viewHtml>
+        <changeHtml>
+            <![CDATA[
+                    <input type="checkbox" name="${entity}_${property}_${primarykey}" class="${class}" ${ischecked} ${others} disabled="disabled" value="${form_data}" /><label>${realValue}</label>
+            ]]>
+        </changeHtml>
+    </component>
+
+    <!-- radio -->
+    <component>
+        <name>radio</name>
+        <cd>FORM_RADIO_DISPLAY</cd>
+        <desc></desc>
+        <class></class>
+        <attribute>
+            <name>entity</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <name>property</name>
+            <required>true</required>
+        </attribute>
+        <editHtml>
+            <![CDATA[
+                    <input type="radio" name="${entity}_${property}_${primarykey}" class="${class}" ${ischecked} ${others} value="${form_data}" /><label>${realValue}</label>
+            ]]>
+        </editHtml>
+        <viewHtml>
+            <![CDATA[
+                    <input type="radio" name="${entity}_${property}_${primarykey}" class="${class}" ${ischecked} ${others} disabled="disabled" value="${form_data}" /><label>${realValue}</label>
+            ]]>
+        </viewHtml>
+        <changeHtml>
+            <![CDATA[
+                    <input type="radio" name="${entity}_${property}_${primarykey}" class="${class}" ${ischecked} ${others} disabled="disabled" value="${form_data}" /><label>${realValue}</label>
+            ]]>
+        </changeHtml>
+    </component>
+
+    <!-- op -->
+    <component>
+        <name>op</name>
+        <cd>FORM_OP_DISPLAY</cd>
+        <desc>界面操作模版定义</desc>
+
+        <!-- 按钮名称，根据模版不同用途不一致 -->
+        <attribute>
+            <name>name</name>
+            <required>false</required>
+        </attribute>
+        <!-- 权限编码，存在的时候进行日志记录 -->
+        <attribute>
+            <name>rhtCd</name>
+            <required>false</required>
+        </attribute>
+        <!-- 按钮模版(li,a,span等值，可以自由扩展) -->
+        <attribute>
+            <name>template</name>
+            <required>true</required>
+        </attribute>
+        <!-- 自定义样式 -->
+        <attribute>
+            <name>class</name>
+            <required>true</required>
+        </attribute>
+        <!-- 点击操作 -->
+        <attribute>
+            <name>onClick</name>
+            <required>false</required>
+        </attribute>
+
+        <liHtml>
+            <![CDATA[
+                 <li rhtCd="${rhtCd}" onClick="OpLog.click(this);${onClick}">
+                    <a class="${class}" href="javascript:void(0)"><span>${name}</span></a>
+                 </li>
+             ]]>
+        </liHtml>
+        <spanHtml>
+            <![CDATA[
+                <span rhtCd="${rhtCd}" onClick="OpLog.click(this);${onClick}" class="${class}">[${name}]</span>
+                ]]>
+        </spanHtml>
+        <aHtml>
+            <![CDATA[
+                <a rhtCd="${rhtCd}" href="javascript:void(0)" onClick="OpLog.click(this);${onClick}" class="${class}">[${name}]</a>
+            ]]>
+        </aHtml>
+    </component>
+
+    <!-- include -->
+    <component>
+        <name>include</name>
+        <cd>FORM_INCLUDE_DISPLAY</cd>
+        <desc>导入其他表单</desc>
+
+        <!-- 表单cd -->
+        <attribute>
+            <name>formCd</name>
+            <required>true</required>
+        </attribute>
+        <!-- 版本号 -->
+        <attribute>
+            <name>version</name>
+            <required>false</required>
+        </attribute>
+        <!-- 其他参数 -->
+        <attribute>
+            <name>param</name>
+            <required>false</required>
+        </attribute>
+
+        <viewHtml>
+            <![CDATA[
+                    <input type="checkbox" name="${entity}_${property}_${primarykey}" class="${class}" ${ischecked} ${others} disabled="disabled" value="${form_data}" /><label>${realValue}</label>
+            ]]>
+        </viewHtml>
+    </component>
+
+
+</formhtml>

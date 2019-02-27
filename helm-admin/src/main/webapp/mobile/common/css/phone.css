@@ -1,0 +1,271 @@
+* { margin                      : 0;
+    padding                     : 0;
+    -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+}
+
+html {
+    font-size : 20px;
+}
+
+ul li {
+    list-style : none;
+}
+
+img {
+    border  : 0;
+    margin  : 0;
+    padding : 0;
+}
+
+a {
+    text-decoration             : none;
+    -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+}
+
+html, body {
+    position : relative;
+    width    : 100%;
+    height   : 100%;
+    overflow : hidden;
+}
+
+body {
+    font-size   : .6rem;
+    font-family : "Microsoft Yahei Font", serif
+}
+
+/*公司图标部分*/
+.wrapper {
+    position   : relative;
+    min-width  : 300px;
+    height     : 100%;
+    background : #F1EFF5;
+}
+
+.icon-top {
+    width       : 100%;
+    height      : 45%;
+    background  : rgba(42, 63, 167, 0.88);
+    color       : #fff;
+    text-align  : center;
+    font-weight : bold;
+}
+
+.icon-top .logo {
+    position     : relative;
+    padding-left : 5rem;
+}
+
+.icon-p {
+    position    : relative;
+    top         : 3rem;
+    font-size   : 1.5rem;
+    font-family : "Microsoft Yahei Font", serif;
+}
+
+.icon-top img {
+    position : absolute;
+    width    : 9rem;
+    height   : 1.2rem;
+    top      : 4rem;
+}
+
+.center {
+    width      : 100%;
+    text-align : center;
+    padding    : 0 1.6rem;
+    box-sizing : border-box;
+}
+
+.boxOne {
+    width      : 100%;
+    height     : 2.5rem;
+    position   : relative;
+    /*margin-top : 15px;*/
+}
+
+.oneName {
+    border   : none;
+    width    : 1rem;
+    height   : 1rem;
+    display  : inline-block;
+    position : absolute;
+    top      : 64%;
+    left     : 3%;
+}
+
+.centerInput {
+    width         : 100%;
+    height        : 2rem;
+    border        : 1px solid #ccc;
+    outline       : #ffffff;
+    padding-left  : 1.75rem;
+    padding-right : 10px;
+    box-sizing    : border-box;
+    margin-top    : 1.1rem;
+    font-size     : .7rem;
+    font-family   : '微软雅黑', serif;
+    border-radius : 5px;
+}
+
+.boxTow {
+    width    : 100%;
+    height   : 2.5rem;
+    position : relative;
+}
+
+.f-mgt10 {
+    margin-top   : 25px;
+    padding-left : 5px;
+    text-align   : left;
+}
+
+.u-auto {
+    margin         : 0 12px 0 0;
+    vertical-align : middle;
+}
+
+.passImg {
+    width    : 1rem;
+    height   : 1rem;
+    display  : inline-block;
+    position : absolute;
+    top      : 64%;
+    left     : 3%;
+}
+
+.loginBtn {
+    margin-top    : 15px;
+    width         : 100%;
+    height        : 2.3rem;
+    line-height   : 2.3rem;
+    color         : #fff;
+    background    : rgba(42, 63, 167, 0.88);
+    border        : rgba(42, 63, 167, 0.88);
+    font-size     : 1.2rem;
+    font-family   : "微软雅黑", serif;
+    border-radius : 5px;
+}
+
+.deleteImg {
+    position   : absolute;
+    right      : 0.4rem;
+    width      : 1rem;
+    height     : 1rem;
+    top        : 1.6rem;
+    display    : block;
+    visibility : hidden;
+}
+
+/*登录错误提示*/
+.error-box {
+    width      : 100%;
+    height     : 1.2rem;
+    text-align : left;
+}
+
+.error-prompt {
+    display     : none;
+    padding     : .4rem;
+    color       : #F90909;
+    line-height : 2rem;
+}
+
+/*320px格式 苹果4/5/5s */
+@media screen and ( min-width : 320px) {
+    html {
+        font-size : 20px;
+    }
+}
+
+/*360px格式*/
+@media screen and ( min-width : 359px) {
+
+    html {
+        font-size : 22.5px;
+    }
+
+}
+
+/*375px格式 苹果6*/
+@media screen and ( min-width : 374px) {
+
+    html {
+        font-size : 23.5px;
+    }
+
+}
+
+/*383px格式 Nexus 6 LG Optimus G*/
+@media screen and ( min-width : 383px) {
+    html {
+        font-size : 24.5px;
+    }
+
+}
+
+/*399px galaxyNote*/
+@media screen and ( min-width : 399px) {
+    html {
+        font-size : 25.5px;
+    }
+
+}
+
+/*414px 苹果6plus*/
+@media screen and ( min-width : 414px) {
+
+    html {
+        font-size : 26px;
+    }
+
+}
+
+/*424px  LG 4X */
+@media screen and ( min-width : 423px) {
+    html {
+        font-size : 26.5px;
+    }
+
+}
+
+/*480px MT27i Xperia sola*/
+@media screen and ( min-width : 479px) {
+    html {
+        font-size : 30px;
+    }
+
+}
+
+/*540px Droid3/4/Razr Atrix 4g*/
+@media screen and ( min-width : 539px) {
+    html {
+        font-size : 34px;
+    }
+
+}
+
+/*600px Droid3/4/Razr Atrix 4g*/
+@media screen and ( min-width : 599px) {
+    html {
+        font-size : 37.5px;
+    }
+
+}
+
+/*640px*/
+@media screen and ( min-width : 639px) {
+    html {
+        font-size : 40px;
+    }
+
+}
+
+/*800px*/
+@media screen and ( min-width : 799px) {
+    html {
+        font-size : 50.5px;
+    }
+
+}
+

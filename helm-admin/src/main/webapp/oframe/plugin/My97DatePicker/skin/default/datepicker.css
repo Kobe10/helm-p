@@ -1,0 +1,265 @@
+/*
+ * My97 DatePicker 4.7
+ */
+
+.WdateDiv{
+	width:220px;
+	background-color:#FFFFFF;
+	border:#CCC 1px solid;
+	padding:8px;
+	box-shadow:inset 0 0 5px #CCC;
+	font-family:arial;
+}
+
+.WdateDiv2{
+	width:360px;
+}
+.WdateDiv *{font-size:9pt;}
+
+.WdateDiv .NavImg a{
+	display:block;
+	cursor:pointer;
+	height:16px;
+	width:16px;
+	margin:3px 0 0 0;
+}
+
+.WdateDiv .NavImgll a{
+	float:left;
+	background:transparent url(img.gif) no-repeat scroll 0 0;
+}
+.WdateDiv .NavImgl a{
+	float:left;
+	background:transparent url(img.gif) no-repeat scroll -16px 0;
+}
+.WdateDiv .NavImgr a{
+	float:right;
+	background:transparent url(img.gif) no-repeat scroll -32px 0;
+}
+.WdateDiv .NavImgrr a{
+	float:right;
+	background:transparent url(img.gif) no-repeat scroll -48px 0;
+}
+
+.WdateDiv #dpTitle{
+	height:24px;
+	margin-bottom:5px;
+	padding:1px;
+}
+
+.WdateDiv .yminput{
+	margin-top:2px;
+	text-align:center;
+	height:20px;
+	border:0px;
+	width:65px;
+	cursor:pointer;
+}
+
+.WdateDiv .yminputfocus{
+	margin-top:2px;
+	text-align:center;
+	font-weight:bold;
+	height:20px;
+	color:blue;
+	border:#ccc 1px solid;
+	width:50px;
+}
+
+.WdateDiv .menuSel{
+	z-index:1;
+	position:absolute;
+	padding:5px;
+	background-color:#FFFFFF;
+	border:#ccc 1px solid;
+	display:none;
+}
+
+.WdateDiv .menu{
+	cursor:pointer;
+	background-color:#fff;
+}
+
+.WdateDiv .menuOn{
+	cursor:pointer;
+	background-color:#BEEBEE;
+}
+
+.WdateDiv .invalidMenu{
+	color:#aaa;
+}
+
+.WdateDiv .YMenu{
+	margin-top:20px;
+
+}
+
+.WdateDiv .MMenu{
+	margin-top:20px;
+	*width:62px;
+}
+
+.WdateDiv .hhMenu{
+	margin-top:-98px;
+	margin-left:38px;
+}
+
+.WdateDiv .mmMenu{
+	margin-top:-56px;
+	margin-left:38px;
+}
+
+.WdateDiv .ssMenu{
+	margin-top:-34px;
+	margin-left:38px;
+}
+
+ .WdateDiv .Wweek {
+ 	text-align:center;
+	background:#D7D7D7;
+	border-right:#CCC 1px solid;
+ }
+
+.WdateDiv .MTitle{
+	background-color:#D7D7D7;/*#BDEBEE;*/
+	color:#333;
+}
+.WdateDiv .MTitle td {
+	padding:2px 0;
+}
+.WdateDiv .WdayTable2{
+	border-collapse:collapse;
+	border:#c5d9e8 1px solid;
+}
+.WdateDiv .WdayTable2 table{
+	border:0;
+}
+
+.WdateDiv .WdayTable{
+	line-height:20px;
+	/*border:#c5d9e8 1px solid;*/
+}
+.WdateDiv .WdayTable td{
+	text-align:center;
+}
+
+.WdateDiv .Wday{
+	cursor:pointer;
+}
+
+.WdateDiv .WdayOn{
+	cursor:pointer;
+	background-color:#C0EBEF;
+	border-radius:3px;
+}
+
+.WdateDiv .Wwday{
+	cursor:pointer;
+	color:#FF2F2F;
+}
+
+.WdateDiv .WwdayOn{
+	cursor:pointer;
+	color:#000;
+	background-color:#C0EBEF;
+	border-radius:3px;
+}
+.WdateDiv .Wtoday{
+	cursor:pointer;
+	color:blue;
+}
+.WdateDiv .Wselday{
+	background-color:#04C;/*#A9E4E9;*/
+	color:#FFF;
+	border-radius:3px;
+}
+.WdateDiv .WspecialDay{
+	background-color:#66F4DF;
+}
+
+.WdateDiv .WotherDay{
+	cursor:pointer;
+	color:#999;/*#6A6AFF;*/
+}
+
+.WdateDiv .WotherDayOn{
+	cursor:pointer;
+	background-color:#C0EBEF;
+	border-radius:3px;
+}
+
+.WdateDiv .WinvalidDay{
+	color:#aaa;
+}
+
+.WdateDiv #dpTime{
+	float:none;
+	margin-top:3px;
+	margin-right:30px;
+}
+
+.WdateDiv #dpTime #dpTimeStr{
+	margin:0 3px 0 8px;
+}
+
+.WdateDiv #dpTime input{
+	width:31px;
+	height:20px;
+	text-align:center;
+	border:#ccc 1px solid;
+}
+
+.WdateDiv #dpTime .tB{
+	border-right:0px;
+}
+
+.WdateDiv #dpTime .tE{
+	border-left:0;
+	border-right:0;
+}
+
+.WdateDiv #dpTime .tm{
+	width:7px;
+	border-left:0;
+	border-right:0;
+}
+
+.WdateDiv #dpTime #dpTimeUp{
+	height:10px;
+	width:13px;
+	border:0px;
+	background:url(img.gif) no-repeat -32px -16px;
+}
+
+.WdateDiv #dpTime #dpTimeDown{
+	height:10px;
+	width:13px;
+	border:0px;
+    background:url(img.gif) no-repeat -48px -16px;
+}
+
+.WdateDiv #dpQS {
+ 	float:left;
+	margin:6px 3px 0 5px;
+	background:#FFF url(img.gif) no-repeat -1px -16px;
+	width:19px;
+	height:20px;
+	cursor:pointer;
+}
+.WdateDiv #dpQS:hover {
+	background:#EEE url(img.gif) no-repeat -1px -16px;
+}
+.WdateDiv #dpControl {
+	margin-top:5px;
+    margin-bottom:1px;
+	text-align:right;
+}
+.WdateDiv .dpButton{
+	height:20px;
+	width:45px;
+	border:#ccc 1px solid;
+	margin-top:2px;
+	margin-right:1px;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#EEE));
+	cursor:pointer;
+}

@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "common/core.css";
+@import "blue/style.css";
+
+body {
+    background: white;
+    overflow: auto !important;
+}
+
+table.border td {
+    text-align: left;
+}
+
+li{
+    clear: none !important;
+}
+input {
+    line-height: 20px;
+    padding: 2px;
+}
+
+input[type=text] {
+    width: 80%;
+    min-width: 30px;
+}
+textarea, select{
+    width: 80%;
+}
+.oframeplugin{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.oframecover{
+    position: absolute;
+    background-color: #c8cc1c;
+    opacity: 0.3;
+    z-index: 1000;
+    left:0;
+    top:0;
+}

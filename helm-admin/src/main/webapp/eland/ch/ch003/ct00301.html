@@ -1,0 +1,146 @@
+<!DOCTYspanE html>
+<html style="height: auto">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="messageLogging">
+    <div class="return"><a href="login.html">返回登陆</a></div>
+    <table>
+        <tbody>
+        <tr>
+            <td style="width: 12%">档案编号 ：</td>
+            <td style="width: 22%"></td>
+            <td style="width: 12%">被安置人 ：</td>
+            <td style="width: 22%"></td>
+            <td style="width: 12%">签约时间 ：</td>
+            <td style="width: 22%"></td>
+        </tr>
+        <tr>
+            <td style="width: 12%">签约序号 ：</td>
+            <td style="width: 22%"></td>
+            <td style="width: 12%">可选面积 ：</td>
+            <td style="width: 22%"></td>
+            <td style="width: 12%">可选户型 ：</td>
+            <td style="width: 22%"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="bottomList">
+        <span>居室 ：</span>
+        <input type=""/>
+        <span>户型 ：</span>
+        <input/>
+        <span>面积 ：</span>
+        <input style="width: 5%"/> - <input style="width: 5%"/>
+        <span>地址 ：</span>
+        <input/>
+        <input name="inquiry" value="查询" type="submit">
+        <a class="rightList">
+            <span class="list">列表</span>
+            <span class="control">销控</span>
+        </a>
+    </div>
+</div>
+<table id="stateQuery">
+    <thead>
+    <tr>
+        <td>序号</td>
+        <td>房屋地址</td>
+        <td>房屋结构</td>
+        <td>户型名称</td>
+        <td>房间朝向</td>
+        <td>房源状态</td>
+    </tr>
+    </thead>
+    <tbody id="ch003">
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    </tbody>
+</table>
+<ul id="popupLayer">
+    <li>ggg</li>
+    <li>jjj</li>
+    <li>hhhh</li>
+</ul>
+</body>
+
+</html>
+<script>
+    var tbodies = document.getElementById('ch003');
+    var pupLayer = document.getElementById('popupLayer');
+    var aTr = tbodies.getElementsByTagName('tr');
+    var stateQuery = document.getElementById('stateQuery');
+    var prev;//存放点击的tr
+
+    //给tr下的第三个td绑定移入事件
+    for (var i = 0; i < aTr.length; i++) {
+        var aTds = aTr[i].getElementsByTagName('td');
+        //点击
+        aTr[i].onclick = function () {
+            if (prev) {
+                prev.style.backgroundColor = '';
+            }
+            this.style.backgroundColor = '#3FAEE9';
+            prev = this;
+        }
+
+
+        //移入
+        aTds[3].onclick = function () {
+            pupLayer.style.display = 'block';
+            pupLayer.style.left = getPos(this, tbodies).l + this.offsetWidth / 2 - 2 + 'px';
+            pupLayer.style.top = getPos(this, tbodies).t - 2 * this.offsetHeight - 2 + 'px';
+        }
+        aTds[3].onmouseout = function () {
+            pupLayer.style.display = '';
+        }
+
+
+    }
+    pupLayer.onmouseover = function () {
+        pupLayer.style.display = 'block';
+    }
+    pupLayer.onmouseout = function () {
+        pupLayer.style.display = '';
+    }
+
+
+    //获取指定元素到目标元素的距离
+    function getPos(obj, target) {
+        target = target || document.body;
+        var pos = {l: 0, t: 0};
+        //console.log(obj.offsetParent.offsetParent.offsetParent);
+        //如果obj.offsetParent存在的话就循环往上查找
+        while (obj.offsetParent) {
+            //每次加上obj到obj.offsetParent的距离。
+            pos.l += obj.offsetLeft;
+            pos.t += obj.offsetTop;
+            //加完之后八obj换成obj.offsetParent
+            obj = obj.offsetParent;
+            //加上边框的width
+            pos.l += obj.clientLeft;
+            pos.t += obj.clientTop;
+            //if(obj===target)obj=null;
+        }
+        //返回当前传入的元素到最外层的距离。
+        return pos;
+    }
+</script>

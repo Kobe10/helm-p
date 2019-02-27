@@ -1,0 +1,25 @@
+#layout, #footer, #splitBar, #splitBarProxy, #alertBackground, #dialogBackground, #background,
+.comboxop, .shadow, .panelBar button.btn{ display:none;}
+#printBox{display:block;}
+select, input,.textInput{border: 0;}
+.panelBar,.btn{display: none}
+.indenter a{text-decoration: none;}
+/* CSS Table */
+table.list,table.border {border-collapse:collapse;table-layout:fixed}
+table.list thead tr, table.border thead tr {background-color: #F0EFF0;}
+table.list th, table.border th{padding:1px 2px; line-height:21px;font-size: 12px; border: solid 1px #D0D0D0; font-weight:bolder; }
+table.list td, table.border td {padding:1px 2px; line-height:21px; font-size: 12px; border:solid 1px #D0D0D0;overflow: hidden;}
+span.link, span.panel_menu{display: none}
+.panel .panelHeaderContent h1{background-color: red}
+
+/* Grid */
+.grid table {border-collapse:collapse; table-layout:fixed;}
+.grid table th {padding:1px 2px; line-height:21px; border: solid 1px #D0D0D0; font-weight:bolder;}
+.grid table td {padding:1px 2px; line-height:21px; border: solid 1px #D0D0D0; line-height: 21px; overflow:hidden;}
+.grid .gridTbody td div { display: block; height: 21px; line-height: 21px; overflow: hidden;}
+.grid .left { text-align:left;}
+.grid .right { text-align:right;}
+.grid .center { text-align:center;}
+
+/* 不打印的 */
+.noPrint {display: none;}

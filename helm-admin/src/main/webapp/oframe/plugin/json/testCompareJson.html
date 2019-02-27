@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试json</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div.container {
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        #json1, #json2 {
+            width: 50%;
+            height: 500px;
+            /*background-color: #b5e9b4;*/
+
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+        }
+        span {
+            display: inline-block;
+            /*background-color: #00a0e9;*/
+            width: 100%;
+            height: 30px;
+        }
+    </style>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="json-patch.js"></script>
+    <script src="json-patch-duplex.js"></script>
+    <script>
+        var CheckJson = {
+            compareJson: function () {
+//                {key:"value"}
+                var json1 = $("#json1_text").val();
+                var json2 = $("#json2_text").val();
+                if (json1 == '') {
+                    json1 = localStorage.getItem("json1");
+                    if (json1 && json1 != '') {
+                        $("#json1_text").val(json1);
+                    }
+                }
+                if (json2 == '') {
+                    json2 = localStorage.getItem("json2");
+                    if (json2 && json2 != '') {
+                        $("#json2_text").val(json2);
+                    }
+                }
+                if (json1 != '' && json2 != '') {
+                    localStorage.setItem("json1", json1);
+                    localStorage.setItem("json2", json2);
+                    var jsonObj1 = JSON.parse(json1);
+                    var jsonObj2 = JSON.parse(json2);
+                    console.log(jsonObj1);
+                    var diff = jsonpatch.compare(jsonObj1, jsonObj2);
+                    JSON.stringify(diff);
+                    console.log(diff);
+                    $("#result").text(JSON.stringify(diff));
+                } else {
+                    alert("请输入正确的json");
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <div class="title"
+         style="text-align:center;height: 50px; width: 100%; background-color: #fff5d4;font-size: 30px;font-weight: bold">
+        对比两个json
+    </div>
+    <div class="container">
+        <div id="json1">
+            <span>原始json</span>
+            <textarea id="json1_text" style="width: 95%;height: 95%"></textarea>
+        </div>
+        <div id="json2">
+            <span>修改后json</span>
+            <textarea id="json2_text" style="width: 95%;height: 95%"></textarea>
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: center">
+        <button style="font-size: 20px;font-weight: bold;" onclick="CheckJson.compareJson();">点击对比差异</button>
+    </div>
+    <div style="margin: 10px;padding:10px;background-color: #b5e9b4">
+        <h4>增量修改记录</h4>
+        <div id="result">
+
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var json1 = $("#json1_text").val();
+        var json2 = $("#json2_text").val();
+        if (json1 == '') {
+            json1 = localStorage.getItem("json1");
+            if (json1 != '') {
+                $("#json1_text").val(json1);
+            }
+        }
+        if (json2 == '') {
+            json2 = localStorage.getItem("json2");
+            if (json2 != '') {
+                $("#json2_text").val(json2);
+            }
+        }
+//            if (json1 != '' && json2 != '') {
+//                localStorage.setItem("json1", json1);
+//                localStorage.setItem("json2", json2);
+//            }
+    });
+</script>
+</html>

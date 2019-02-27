@@ -1,0 +1,36 @@
+<entitys>
+    <entity>
+        <entityName>DocumentInfo</entityName>
+        <loadType>InitEntityTree</loadType>
+        <loadWay>queryTreeCmpt</loadWay>
+    </entity>
+    <entity>
+        <entityName>MessageDef</entityName>
+        <loadType>InitMessage</loadType>
+        <loadWay>LoadMessageDef</loadWay>
+    </entity>
+    <entity>
+        <entityName></entityName>
+        <loadType>InitSequence</loadType>
+        <param>
+            ENTITY_CONFIG_GROUP_ID_SQL.sys_entity_group_def.entity_group_id,
+            ENTITY_CONFIG_JOB_DEF_ID_SQL.sys_job_def.job_id,
+            POS_ID_SEQ.cmp_org_pos.pos_id,
+            PRJ_CD_SEQ.cmp_prj.prj_cd,
+            ROLE_CD_SEQ.cmp_role.role_cd,
+            STAFF_ID_SEQ.cmp_staff.staff_id,
+            TREE_RHT_ID.cmp_rht.rht_id,
+            ORG_ID_SEQ.cmp_org.org_id,
+            SEQ_CFG_ITEM_ID.sys_cfg_item.item_id,
+        </param>
+        <loadWay></loadWay>
+    </entity>
+    <entity>
+        <entityName>JobTaskInfo</entityName>
+        <loadType>InitJob</loadType>
+        <loadWay></loadWay>
+    </entity>
+    <entity>
+        <loadType>InitComponentImpl</loadType>
+    </entity>
+</entitys>

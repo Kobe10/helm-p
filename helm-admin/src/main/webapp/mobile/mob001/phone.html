@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>移动端登录</title>
+    <link href="css/phone.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/core-min.js"></script>
+    <script type="text/javascript" src="js/md5-min.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="icon-top"><p class="icon-p">居民住房改善系统</p>
+        <img class="logo" src="image/sub-logo_03.png">
+    </div>
+
+    <div class="center">
+        <div class="boxOne">
+            <img class="oneName" id="userimg" src="image/app-login_03.png">
+            <input name="tel" class="centerInput telInput" id="username" placeholder="系统帐号" type="text">
+            <img class="deleteImg" id="userimgcan" src="image/app-login_08.png">
+        </div>
+        <div class="boxTow">
+            <img class="passImg" id="passimg" src="image/app-login_10.png">
+            <input name="tel" class="centerInput passInput" id="password" placeholder="用户密码" type="password">
+            <img class="deleteImg" id="passimgcan" src="image/app-login_08.png">
+        </div>
+        <div class="error-box"><span class="error-prompt">用户名/密码错误</span></div>
+        <button class="loginBtn" id="login">登 录</button>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    $("#username").blur(function(){
+        $("#userimg").attr("src","image/app-login_03.png");
+        $("#userimgcan").click(function(){
+            $("#username").val("");
+
+        });
+
+        if($(this).val()==""){
+            $(this).attr("placeholder","系统帐号");
+        }
+    });
+    $("#username").focus(function(){
+        $("#userimg").attr("src","image/app-login_05.png");
+        $("#passimgcan").css("visibility","hidden");
+        $("#userimgcan").css("visibility","visible");
+        $(this).attr("placeholder","");
+
+    });
+    $("#password").blur(function(){
+        $("#passimg").attr("src","image/app-login_10.png");
+        $("#passimgcan").click(function(){
+            $("#password").val("");
+
+        });
+        if($(this).val()==""){
+            $(this).attr("placeholder","用户密码");
+        }
+    });
+    $("#password").focus(function(){
+        $("#passimg").attr("src","image/app-login_10-15.png");
+        $("#userimgcan").css("visibility","hidden");
+        $("#passimgcan").css("visibility","visible");
+        $(this).attr("placeholder","");
+    });
+
+
+
+    if(!false){
+        $(".error-prompt").show();
+    }else{
+        $(".error-prompt").hide();
+    };
+
+</script>

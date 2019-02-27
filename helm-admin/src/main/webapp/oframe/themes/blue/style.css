@@ -1,0 +1,1827 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #ddd;
+    color: #000;
+}
+
+#main {
+    background: #fff;
+    border-left: 20px solid #eee;
+    border-right: 20px solid #eee;
+}
+
+pre.listing {
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+pre.listing b {
+    color: #f00;
+}
+
+#top {
+    background: #2b7aae;
+    color: #c9ebff;
+}
+
+/*top部分项目选择 如：白塔寺腾退项目*/
+#prjListForMenu {
+    border: 1px solid #4aaff3;
+    background-color: #ffffff;
+}
+
+/*top部分里的消息部分，小信封*/
+.message {
+    background: url(../blue/images/icon-logout_03.png) no-repeat left -56px;
+    color: #c9ebff;
+}
+
+.message label {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.message ul {
+    background-color: white;
+    color: black;
+    border-left: 1px solid #bcd4e5;
+    border-right: 1px solid #bcd4e5;
+}
+
+.message ul span.up-tip {
+    border-left: 10px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #FEFEFE;
+}
+
+.message ul li {
+    border-top: 1px solid #bcd4e5;
+}
+
+.message ul li.more {
+    border-bottom: 1px solid #bcd4e5;
+    background-color: #ecf2f7;
+}
+
+.message ul li.title {
+    background-color: #ecf2f7;
+    color: #8b9aa9;
+}
+
+.message ul li.context:hover {
+    background-color: #f4f9fc;
+}
+
+.message ul li.read {
+    background-color: #ecf2f7;
+}
+
+.message ul li.more {
+    border-bottom: 1px solid #bcd4e5;
+    background-color: #ecf2f7;
+}
+
+/* Layout头部文件，设置，退出*/
+.logout {
+    background: url(../blue/images/icon-logout_03.png) no-repeat left 7px;
+    color: #c9ebff;
+}
+
+.setter {
+    background: url(../blue/images/icon-logout_03.png) no-repeat left -30px;
+    color: #c9ebff;
+}
+
+.bigger {
+    background: url(../blue/images/iconfont-fangda.png) no-repeat -1px 5px;
+    color: #c9ebff;
+}
+
+.smaller {
+    background: url(../blue/images/iconfont-suoxiaoziti.png) no-repeat -5px 3px;
+    color: #c9ebff;
+}
+
+/*layout导航部分，公司图标部分*/
+#header, #header .headerNav {
+    background: #3c90c8;
+}
+
+#header .goleft {
+    background: #2b7aae url(../blue/images/tabscontrol.png) no-repeat 0 -32px;
+}
+
+#header .goright {
+    background: #2b7aae url(../blue/images/tabscontrol.png) no-repeat 0 -110px;
+}
+
+/*头部导航右侧部分，包含下拉菜单*/
+.sf-menu a {
+    color: #fff;
+}
+
+.sf-menu li.current {
+    background: #2b7aae;
+}
+
+.sf-menu li.sfHover {
+    background: #2b7aae;
+}
+
+.sf-menu ul li {
+    background: #2b7aae;
+    top: -1px;
+}
+
+.sf-menu ul ul li {
+    background: #3c90c8;
+}
+
+.sf-menu li li:hover, .sf-menu li li.sfHover {
+    background: #3c90c8;
+}
+
+.sf-menu li li li:hover, .sf-menu li li li.sfHover {
+    background: #53a7df;
+}
+
+/*header下左侧部分，比如：指标配置部分、项目管理*/
+.short-link-a {
+    background: #f9f9f9 url(../blue/images/icon-short-bg.png) no-repeat center center;
+}
+
+.short-link {
+    border: 1px solid #e8e8e8;
+    background: #fff;
+}
+
+.short-link-btn {
+    background: #fff url(../blue/images/updown_03.png) no-repeat center top;
+}
+
+.short-link-prev {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.short-link-next {
+    border-top: 1px solid #e8e8e8;
+}
+
+.slink-bg-1 a {
+    background: #fceded;
+}
+
+.slink-bg-2 a {
+    background: #ebedff;
+}
+
+.slink-bg-3 a {
+    background: #fcecde;
+}
+
+.slink-bg-4 a {
+    background: #e6f2de;
+}
+
+.slink-bg-5 a {
+    background: #f8deef;
+}
+
+body, #splitBar {
+    background-color: #f2f2f2;
+}
+
+/*tab右键，如：我的首页->右键*/
+#contextmenu ul {
+    background-color: #fff;
+    border: 1px solid #999;
+}
+
+#contextmenu li {
+    color: #000;
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+#contextmenu li.hover {
+    border: 1px solid #0a246a;
+    background-color: #b6bdd2
+}
+
+#contextmenuShadow {
+    background-color: #000;
+}
+
+#contextmenu li.disabled {
+    color: #666;
+}
+
+/*container下导航部分，如:我的首页*/
+.tabs {
+    border: 1px solid #e7e7e7;
+    background: none;
+}
+
+.tabs .tabsHeader {
+    background: none;
+}
+
+.tabs .tabsHeaderContent {
+    background: none;
+}
+
+.tabs .tabsHeader ul {
+    background: #f7f7f7;
+}
+
+.tabs .tabsHeader li {
+    border-top: 3px solid #f7f7f7;
+    background: none;
+}
+
+.tabs .tabsHeader li.selected {
+    border-top-color: #3c90c8;
+    background: #fff;
+}
+
+.tabs .tabsHeader li a {
+    background: none;
+}
+
+.tabs .tabsHeader li span {
+    background: none;
+}
+
+.tabs .tabsContent {
+    border: none;
+    background: none;
+}
+
+.tabsPageHeaderContent {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.tabsPage .tabsPageHeader {
+    background: #f7f7f7;
+    border-color: #e9e9e9;
+}
+
+.tabsPage .tabsPageHeader li {
+    border: 1px solid #e7e7e7;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    background: #f1f1f1;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 4px;
+}
+
+.tabsPage .tabsPageHeader li.selected {
+    background: #fff;
+}
+
+.tabsPage .tabsPageHeader li a, .tabsPage .tabsPageHeader li a span {
+    background: none;
+}
+
+.tabsPage .tabsPageHeader li .close, .tabsPage .tabsPageHeader li.hover .close, .tabsPage .tabsPageHeader li.selected .close {
+    background: url(../blue/images/tabs/tabspage_icon.png) no-repeat;
+}
+
+.tabsPage .tabsPageHeader li a {
+    color: #15428B;
+}
+
+.tabsPage .tabsPageHeader .home_icon {
+    background: url("../blue/images/icon.png") no-repeat;
+}
+
+.tabsPage .tabsPageContent div.gridScroller {
+    border-left: 1px solid #e9e9e9;
+    border-right: 1px solid #e9e9e9;
+}
+
+.tabsPage .tabsLeft, .tabsPage .tabsRight, .tabsPage .tabsMore {
+    height: 37px;
+    background: #e7e7e7 url(../blue/images/tabscontrol.png) no-repeat;
+}
+
+.tabsPage .tabsMore {
+    background: #e7e7e7 url(../blue/images/tabscontrol.png) no-repeat 0 -156px;
+}
+
+.tabsPage .tabsRight {
+    background: #e7e7e7 url(../blue/images/tabscontrol.png) no-repeat 0 -118px;
+}
+
+.tabsPage .tabsMore {
+    border-left: 1px solid #e7e7e7;
+}
+
+/*container下导航部分，动态创建li部分*/
+.tabsPage .tabsMoreList {
+    border-color: #91c4e4;
+    background: #fff;
+}
+
+.tabsPage .tabsMoreList li a:hover {
+    background: #f0f0f0;
+}
+
+.tabsPage .tabsMoreList li.selected a {
+    background: #91c4e4;
+    color: #fff;
+}
+
+.tabsPage .tabsPageContent {
+    border-color: #e9e9e9;
+    background: #fff;
+}
+
+div.split_line {
+    background-color: #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+/* 文本输入区域，如：发送消息时的文本区 */
+textarea.required, textarea.error {
+    background: url(../blue/images/form/input_bg.png) no-repeat scroll;
+}
+
+.textInput, .textArea {
+    border: 1px solid;
+    border-color: #a2bac0 #99bbe8 #99bbe8 #a2bac0;
+    background-color: #FFF;
+}
+
+input.required, textarea.required, select.required {
+    background: url(../blue/images/form/input_bg.png) no-repeat top right scroll;
+}
+
+input.error, select.error {
+    border: 1px solid red;
+}
+
+input.readonly, input[readonly], textarea.readonly, textarea[readonly], select.readonly {
+    border: 1px solid #c3c3c3;
+    background-color: #e5e5e5;
+}
+
+input.textInput {
+    border-color: #c3c3c3;
+}
+
+input.error, textarea.error {
+    border-color: #F80C11 #FB7E81 #FB7E81 #F80C11;
+}
+
+input.focus, textarea.focus {
+    border-color: #8db2e3 #99bbe8 #99bbe8 #8db2e3;
+    background-color: #f8fafc;
+}
+
+input.readonly, textarea.readonly {
+    border-color: #9eabb3 #d5dbdf #d5dbdf #9eabb3;
+    background-color: #F6F6F6;
+}
+
+input.disabled, textarea.disabled {
+    border-color: #9eabb3 #d5dbdf #d5dbdf #9eabb3;
+    background-color: #F6F6F6;
+}
+
+.inputButton, .inputDateButton {
+    background: url(../blue/images/form/input_bt.png) no-repeat;
+}
+
+.drag {
+    background-color: #f7f7f7;
+    border: 2px solid #f2f2f2;
+}
+
+/*Container下方窗口部分，面板*/
+.panel {
+    background: none;
+    border: 1px solid #e4e4e4;
+}
+
+.panel .panelHeader {
+    background: #f7f7f7;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.panel .panelHeaderContent h1 {
+    background: none;
+    color: #585858;
+}
+
+.panel .panelFooter {
+    background: none;
+}
+
+.panel .panelFooterContent {
+    background: none;
+}
+
+.panel-blue {
+    border-color: #93c7ea;
+}
+
+.panel-blue .panelHeader {
+    background: #74b5e1;
+    border-bottom-color: #74b5e1;
+}
+
+.panel-blue .panelHeaderContent h1 {
+    color: #fff;
+}
+
+.panelHeaderContent .collapsable, .panel .expandable {
+    background-image: url(../blue/images/pannel-opt-bg.png);
+    background-repeat: no-repeat
+}
+
+.panelHeaderContent .close {
+    background: url(../blue/images/pannel-opt-bg.png) 0 -136px no-repeat;
+}
+
+.panelHeaderContent .reflesh {
+    background: url(../blue/images/pannel-opt-bg.png) 0 0 no-repeat;
+}
+
+.panelHeaderContent .screen {
+    background: url(../blue/images/pannel-opt-bg.png) 0 -270px no-repeat;
+}
+
+/*放大*/
+.panel .panel_menu:hover {
+    color: #93c7ea;
+}
+
+/*图表信息*/
+table.list, table.slist {
+    border-collapse: collapse;
+    border: solid 1px #ededed;
+}
+
+table.list thead tr, table.slist thead tr {
+    background-color: #e3eef4;
+}
+
+table.list th, table.slist th {
+    border-right: solid 1px #D0D0D0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+table.list td, table.slist td {
+    border-right: solid 1px #ededed;
+    border-bottom: solid 1px #ededed;
+}
+
+table.list th.sortable, table.slist th.sortable, .grid .gridHeader th.sortable {
+    background: url(../blue/images/table/sortable.gif) no-repeat 100% 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+table.list th.asc, table.slist th.asc, .grid .gridHeader th.asc {
+    background-position: right -34px;
+}
+
+table.list th.desc, table.slist th.desc, .grid .gridHeader th.desc {
+    background-position: right -68px;
+}
+
+table.list tbody, table.slist tbody {
+    background-color: #fff;
+}
+
+table.list .right, table.slist .right {
+    text-align: right;
+}
+
+table.list .trbg, table.slist .trbg {
+    background-color: #F8F8F8;
+}
+
+table.list .hot, table.slist .hot {
+    background-color: #fff5c0;
+}
+
+table.list .hover, table.slist .hover {
+    background-color: #e4f5ff;
+}
+
+table.list .selected, table.slist .selected {
+    background-color: #7cc5e5;
+    border-color: #b8d0d6;
+}
+
+table.list a, table.slist a {
+    color: #3C7FB1;
+    font-size: 11px !important;
+    line-height: 20px;
+}
+
+table.list a:hover, table.slist a:hover {
+    text-decoration: underline;
+    line-height: 20px;
+}
+
+table.list td span.error, table.slist td span.error {
+    z-index: -1
+}
+
+table.list .textInput, table.slist .textInput {
+    box-sizing: border-box;
+    height: 32px;
+    width: 98%;
+}
+
+table.nowrap tbody tr {
+    border-bottom: solid 1px #ededed;
+}
+
+/*图片公告信息*/
+ul.news-list li {
+    border-bottom: 1px dashed #d3d3d3;
+}
+
+ul.news-list li a {
+    background: url(../blue/images/news/bead.png) left center no-repeat;
+}
+
+ul.news-list p {
+    color: #4b4a4a;
+}
+
+/*编辑，刷新，修改等。如：房源管理——>条件检索等*/
+.panelBar {
+    background: #f7f7f7;
+    border: 1px solid #e9e9e9;
+}
+
+.panelBar ul li {
+    background: none;
+}
+
+.panelBar .toolBar span {
+    background: url(../blue/images/icon-opt-btn.png) no-repeat
+}
+
+.panelBar .toolBar .conceal span {
+    background: url(../images/icon-hidden.png) no-repeat 2px 7px;
+}
+
+.panelBar .toolBar .reveal span {
+    background: url(../images/icon-show.png) no-repeat 2px 7px;
+}
+
+.panelBar .toolBar a.text span {
+    background: none;
+}
+
+.panelBar .toolBar li, .panelBar .toolBar li.hover {
+    background: none;
+}
+
+.panelBar .toolBar a, .panelBar .toolBar li.hover a {
+    background: none;
+    color: #000;
+}
+
+.panelBar .pages span ul {
+    color: #438eb9;
+    text-decoration: none;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+/**/
+.tip {
+    background: #f5f9fc;
+    border: 1px solid #93c7ea;
+}
+
+.page .pageHeader, .formBar {
+    border: none;
+    background: none;
+}
+
+.dialog .formBar {
+    background: #e5e5e5;
+    border: none;
+}
+
+.dialog .panel .close {
+    background: #a1d459;
+}
+
+select {
+    border: 1px solid #c3c3c3;
+}
+
+label.link, span.link {
+    color: #2b7aae;
+}
+
+.inputWarn, .inputWarn {
+    border: 1px red dotted !important;
+}
+
+input.error, select.error {
+    border: 1px solid red;
+}
+
+/*input.readonly, input[readonly], textarea.readonly, textarea[readonly], select.readonly {*/
+/*border: 1px solid #c3c3c3;*/
+/*background-color: #e5e5e5;*/
+/*}*/
+
+.pageFormContent label {
+    line-height: 29px;
+    width: 100%;
+}
+
+.pageContent .panel {
+    margin-top: 0;
+}
+
+.pageContent {
+    padding: 10px 15px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+div.fixPanelBar {
+    position: fixed;
+    width: 96.5% !important;
+    z-index: 10;
+}
+
+.pageNav {
+    background: url(../blue/images/nav-go.png) no-repeat left center;
+    background-color: rgba(145, 196, 228, 0.13);
+}
+
+.pageNav a.disabled, span.disabled {
+    color: #666;
+}
+
+/*表格线*/
+
+/*表格线*/
+.grid .gridHeader {
+    background: #EEE;
+}
+
+.grid {
+    background: #FFF;
+}
+
+.grid .gridHeader th {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.grid .gridHeader, .grid .gridHeader th {
+    background: #e3eef4;
+}
+
+.grid table {
+    border-color: #d0d0d0;
+}
+
+.grid .gridHeader, .grid .gridHeader th {
+    border-color: #d0d0d0;
+}
+
+.grid table th div {
+    border-left-color: #EEE;
+    border-right-color: #d0d0d0;
+}
+
+.grid table td {
+    border-color: #ededed;
+}
+
+.grid .resizeMarker, .grid .resizeProxy {
+    background: url(../blue/images/grid/resizeCol.png) repeat-y;
+}
+
+.grid .gridHeader th.hover, .grid .gridHeader th.thSelected {
+    border-color: #aaccf6;
+}
+
+.grid .gridTbody td:first-child {
+    border-left: solid 1px #ededed;
+}
+
+.grid .gridTbody td {
+    border-right: solid 1px #ededed;
+    border-bottom: solid 1px #ededed;
+}
+
+.grid .gridTbody .gridRowBg {
+    background: #f7f7f7;
+}
+
+.grid .gridTbody .gridRow {
+    border-color: #ededed;
+}
+
+.grid .gridTbody .gridRow td.tdLast {
+    border-color: #ededed;
+}
+
+.grid .gridTbody .hover {
+    border-color: #dddddd;
+    background: #f5f5f5;
+}
+
+.grid .gridTbody .hover .tdSelected {
+    background: #f5f5f5;
+}
+
+.grid .gridTbody .selected {
+    border-color: #99bbe8;
+    background-color: #3FAEE9;
+}
+
+.grid .gridTbody .selected .btnEdit {
+    color: #fff;
+}
+
+.grid .gridTbody .selected .btnEdit,
+.grid .gridTbody .selected .btnAdd,
+.grid .gridTbody .selected .btnDel,
+.grid .gridTbody .selected .btnView,
+.grid .gridTbody .selected .btnEdit,
+.grid .gridTbody .selected .btnSelect,
+.grid .gridTbody .selected .btnInfo,
+.grid .gridTbody .selected .btnAssign,
+.grid .gridTbody .selected .btnAttach {
+    color: #fff;
+}
+
+.grid .gridTbody .summary {
+    background-color: lightyellow;
+}
+
+.grid .gridTbody .summary td {
+    color: red;
+    font-weight: bolder;
+}
+
+.grid .gridTbody .selected .tdSelected {
+    background: #e8edf3;
+}
+
+.grid .gridTbody .tdSelected {
+    background: #f8f8f8;
+}
+
+.grid .error {
+    background: #fb7e81;
+}
+
+.grid .gridHeader th {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.grid .gridHeader th:first-child {
+    border-left: 1px solid #e9e9e9;
+}
+
+.grid .gridHeader th:last-child {
+    border-right: 1px solid #e3eef4;
+}
+
+/*table.list th.sortable, .grid .gridHeader th.sortable{background:#e3eef4 url(../blue/images/table/sortable.gif) no-repeat 100% 0; border-bottom:1px solid #e9e9e9;}*/
+.panel .grid {
+    border-color: #ededed;
+}
+
+table tr.even {
+    background: #fafafa;
+}
+
+.searchBar .subBar {
+    height: auto;
+    margin-top: 10px;
+}
+
+.panel .grid {
+    border-color: #ededed;
+}
+
+.grid .gridHeader th:last-child {
+    border-right: 1px solid #e3eef4;
+}
+
+/*表单里的隔行变色*/ /*表单和小三角形*/
+.triangle-right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid red;
+}
+
+.triangle-up {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid red;
+}
+
+table.form th, table.form td {
+    border: 1px solid #ECECEC;
+    border: none;
+}
+
+table.form th.subTitle {
+    background: #e8fcff;
+}
+
+table.form th.subLTitle {
+    background: #f9ffde;
+}
+
+table.border th, table.border td {
+    border: 1px solid #99bbe8;
+}
+
+table.border th.subTitle {
+    background: #e6f2fa;
+}
+
+table.border th.subTitle label {
+    color: #3c90c8;
+}
+
+div.border {
+    border: 1px solid #99bbe8;
+}
+
+div.withTitle h1 {
+    text-align: left;
+    background: #f7f7f7;
+    color: #585858;
+}
+
+table.list th.selected {
+    border-color: #99bbe8;
+    background: #dfe8f6;
+}
+
+table tr.hz {
+    background: #e7f6f6;
+}
+
+table.form th label {
+    color: #177DAE;
+}
+
+table.form .inn_table td, table.form .inn_table th {
+    background: #F3F9FD;
+    border: none;
+}
+
+/*折叠面板*/
+.accordion .accordionHeader h2 {
+    color: white;
+}
+
+.accordion .accordionHeader, .accordion .accordionHeader h2, .accordion .accordionHeader h2 span {
+    background: url(../blue/images/accordion/accordion.png);
+}
+
+.accordion .accordionHeader h2 {
+    background: url(../blue/images/accordion/accordion.png) no-repeat 100% -60px;
+}
+
+.accordion .accordionContent {
+    border: 0 solid #99bbe8;
+}
+
+.accordion {
+    border-color: #99bbe8;
+    background: #FFF;
+}
+
+ul.accordion_menu li.selected {
+    background-color: #89C5EC !important;
+    color: white !important;
+}
+
+ul.accordion_menu li {
+    border-color: #f0f7fb;
+}
+
+.accordionHeader h2.collapsable label.summary_data {
+    background-color: #7cce32;
+}
+
+/*发消息时重新打开的页面*/
+.dialog .dialogHeader .close,
+.dialog .dialogHeader .restore,
+.dialog .dialogHeader .minimize {
+    background: url(../blue/images/pannel-opt-bg.png) no-repeat;
+}
+
+.dialog .dialogHeader .maximize {
+    background: url(../blue/images/pannel-opt-bg.png) no-repeat 0 -208px;
+}
+
+.dialog .dialogHeader .close {
+    background: url(../blue/images/pannel-opt-bg.png) no-repeat 0 -140px;
+}
+
+.dialog {
+    background: #fff;
+}
+
+.dialog .dialogHeader {
+    background: #3e90c8 !important;
+}
+
+.dialog .dialogHeader_r {
+    background: #3e90c8 !important;
+}
+
+.dialog .dialogHeader h1 {
+    background: #3e90c8;
+    color: #fff;
+}
+
+.dialog .dialogHeader, .dialog .dialogHeader_r, .dialog .dialogHeader_c {
+    background: none;
+}
+
+.dialog .dialogFooter {
+    background: none;
+}
+
+.dialog .dialogFooter {
+    background: #fff;
+}
+
+.dialog .dialogContent {
+    border: none;
+}
+
+.dialog .pageContent {
+    border: none;
+}
+
+.resizable_f_c {
+    background: #fff;
+}
+
+.divider {
+    border: none;
+}
+
+/*发送等的按键*/
+.btn-primary {
+    color: #fff;
+    background-color: #3c90c8;
+    border-color: #3c90c8;
+}
+
+.btn-primary:hover {
+    background-color: #187bbd;
+    border-color: #187bbd;
+}
+
+.btn-warn {
+    color: #fff;
+    background-color: #ec1f2a;
+    border-color: #ec1f2a;
+}
+
+.btn-warn:hover {
+    background-color: #cd2f3f;
+    border-color: #cd2f3f;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #a1d459;
+    border-color: #a1d459;
+}
+
+.btn-info:hover {
+    background-color: #7db430;
+    border-color: #7db430;
+}
+
+.btn-success {
+    background-color: #7dce33;
+    border-color: #7dce33;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #65a629;
+    border-color: #65a629;
+}
+
+.btn-opt {
+    color: #fff;
+    background-color: #7dce33;
+    border-color: #7dce33;
+}
+
+.btn-opt:hover {
+    background-color: #6ab625;
+    border-color: #6ab625;
+}
+
+.btn-pri {
+    color: #fff;
+    background-color: #3c90c8;
+    border-color: #3c90c8;
+}
+
+.btn-pri:hover {
+    background-color: #187bbd;
+    border-color: #187bbd;
+}
+
+.btn {
+    border: 1px solid transparent;
+}
+
+/*如：居民档案——>居民详情下的鼠标划过显现*/
+button.btn-more:hover {
+    background-color: #2c7bae;
+}
+
+button.btn-more {
+    color: #000;
+    background-color: #e7f2f8;
+    border-color: #4aaff3;
+}
+
+ul.menu {
+    border: 1px solid #4aaff3;
+    background-color: #ffffff;
+}
+
+ul.menu li {
+    background-color: #e7f2f8;
+    color: #000;
+}
+
+ul.menu li.active {
+    color: #000;
+    background-color: #3c9fd5;
+}
+
+ul.menu li:hover {
+    color: #ffffff;
+    background-color: #aabcdc;
+}
+
+ul.list {
+    background-color: #ffffff;
+}
+
+ul.list li {
+    background-color: #e7f2f8;
+    color: #000;
+}
+
+ul.list li.active {
+    color: #000;
+    background-color: #3c9fd5;
+}
+
+ul.list li:hover {
+    color: #ffffff;
+    background-color: #aabcdc;
+}
+
+.pageContent .list-h li {
+    border: 1px dotted #ddd;
+}
+
+.pageContent .p-img {
+    border: none;
+    border-bottom: 1px dotted #ddd;
+}
+
+.pageContent .list-hx li {
+    border: 1px dotted #ddd;
+}
+
+.pageContent .list-chx li {
+    border: 1px dotted #ddd;
+}
+
+.pageContent .hx-img {
+    border-bottom: 1px dotted #ddd;
+}
+
+.pageContent .p-img_no {
+    background: url(../images/forEdit.png) no-repeat;
+}
+
+/* 如：居民办理——>选房处理下的左侧搜索栏 */
+.split_but {
+    background-color: #3d8fc7;
+}
+
+.split_but:hover {
+    background-color: red;
+}
+
+.add_icon {
+    background: url(../blue/images/icon-opt-btn.png) no-repeat;
+}
+
+.dlt_icon {
+    background: url(../blue/images/icon-opt-btn.png) no-repeat;
+}
+
+.dragable {
+    background: url(../blue/images/dragbg.png) no-repeat center;
+}
+
+a.btnAdd, a.btnDel, a.btnView, a.btnEdit, a.btnSelect, a.btnInfo, a.btnAssign, a.btnLook, a.btnAttach {
+    background: url(../blue/images/imgX.gif) no-repeat -161px 5px;
+}
+
+a.btnLook {
+    border: 1px solid #c3c3c3;
+}
+
+a.btnAdd,
+a.btnDel,
+a.btnView,
+a.btnEdit,
+a.btnSelect,
+a.btnInfo,
+a.btnAssign,
+a.btnAttach {
+    background: none;
+    color: #7fbb2a;
+}
+
+table.treetable {
+    border: 1px solid #888;
+}
+
+table.form {
+    border: none;
+}
+
+/*附件显示*/
+div.album-context {
+    background-color: #F5F5F5;
+}
+
+div.album-folder {
+    background: url(../images/fileicon.png) no-repeat center;
+}
+
+div.album-file {
+    background: url(../images/file.png) no-repeat center;
+}
+
+span.album-title {
+    color: #000000;
+}
+
+/*修改居民选房的加号样式*/
+span.addPlus {
+    border: 1px solid #2482f1;
+    background-color: #2da1f1;
+    color: #fff;
+}
+
+span.addPlus:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/*上下翻页*/
+.panelBar .pages span u {
+    color: #438eb9;
+}
+
+.pagination a, .pagination li.hover a {
+    background: #fff;
+    border: 1px solid #deddde;
+}
+
+.pagination li.selected a {
+    background: #3c90c8 !important;
+    border-color: #3c90c8;
+    color: #fff;
+}
+
+.pagination li.disabled {
+    background: none;
+}
+
+.pagination li.disabled span span {
+    color: #666;
+}
+
+.pagination li.jumpto .textInput {
+    border-color: #acaeaf;
+}
+
+.pagination li.jumpto .goto {
+    background: url(../blue/images/page-go.png) no-repeat center center;
+    border: 1px solid #dedede;
+    border-left: none;
+}
+
+.button span {
+    padding: 0 10px 0 5px;
+    background-position: 100% -50px;
+    cursor: pointer;
+}
+
+/* 重新打开页面 */
+.alert {
+    box-shadow: 0 0 12px #000;
+}
+
+.alert .alertContent {
+    border: none;
+    background: #eff6fe;
+    z-index: 200000;
+    border-color: #88a0be;
+}
+
+.alert .confirm .alertInner {
+    border-color: #99bbe8;
+    background: #fefacf;
+}
+
+.alert .confirm .toolBar li:first-child .button, .alert .confirm .toolBar li:first-child .button span {
+    background: #3d8fc7;
+    color: #fff;
+}
+
+.alert .confirm .toolBar .button {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.alert .error .toolBar .button, .alert .correct .toolBar .button, .alert .warn .toolBar .button, .alert .info .toolBar .button, .alert .error .toolBar .buttonActive {
+    background: url(../blue/images/alert-close-bg.png) no-repeat;
+}
+
+.alert .confirm .toolBar li:first-child .button, .alert .confirm .toolBar li:first-child .button span {
+    background: #3d8fc7;
+    color: #fff;
+}
+
+.alert .confirm .toolBar .button {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.button span, .buttonDisabled span, .buttonActive span, .button .buttonContent, .buttonHover, .buttonHover .buttonContent, .buttonActive .buttonContent, .buttonDisabled .buttonContent, .button button, .buttonHover button, .buttonActive button, .buttonDisabled button {
+    color: #15428B;
+}
+
+/* Dialog */
+.tip {
+    background: #eef4f5;
+}
+
+/*警告*/
+.docWarn {
+    color: red !important;
+    font-weight: bold !important;
+}
+
+/* 如：发消息时弹出框，四周的阴影 */
+.shadow .shadow_h_l {
+    background: url(../blue/images/shadow/shadow_h_l.png) no-repeat;
+}
+
+.shadow .shadow_h_r {
+    background: url(../blue/images/shadow/shadow_h_r.png) no-repeat;
+}
+
+.shadow .shadow_h_c {
+    background: url(../blue/images/shadow/shadow_h_c.png) repeat-x;
+}
+
+.shadow .shadow_c_l {
+    background: url(../blue/images/shadow/shadow_c_l.png) repeat-y;
+}
+
+.shadow .shadow_c_r {
+    background: url(../blue/images/shadow/shadow_c_r.png) repeat-y;
+}
+
+.shadow .shadow_c_c {
+    background: url(../blue/images/shadow/shadow_c_c.png) repeat;
+}
+
+.shadow .shadow_f_l {
+    background: url(../blue/images/shadow/shadow_f_l.png) no-repeat;
+}
+
+.shadow .shadow_f_r {
+    background: url(../blue/images/shadow/shadow_f_r.png) no-repeat;
+}
+
+.shadow .shadow_f_c {
+    background: url(../blue/images/shadow/shadow_f_c.png) repeat-x;
+}
+
+/* Tree */
+.tree div div {
+    border: none;
+}
+
+.tree-bar {
+    background-color: #93c7ea;
+}
+
+/*隐藏面板的颜色*/
+.ztree {
+    color: #333
+}
+
+.ztree li a {
+    color: #333;
+    background-color: transparent;
+}
+
+.ztree li a.curSelectedNode {
+    background-color: #FFE6B0;
+    color: black;
+    border: 1px #FFB951 solid;
+}
+
+.ztree li a.curSelectedNode_Edit {
+    padding-top: 0;
+    background-color: #FFE6B0;
+    color: black;
+    border: 1px #FFB951 solid;
+}
+
+.ztree li a.tmpTargetNode_inner {
+    background-color: #316AC5;
+    color: white;
+    border: 1px #316AC5 solid;
+}
+
+.ztree li a input.rename {
+    border: 1px #7EC4CC solid;
+}
+
+.ztree li span.button.root_docu {
+    background: none;
+}
+
+.ztree li span.button.noline_docu {
+    background: none;
+}
+
+ul.tmpTargetzTree {
+    background-color: #FFE6B0;
+}
+
+ul.ztree.zTreeDragUL {
+    background-color: #cfcfcf;
+    border: 1px #00B83F dotted;
+}
+
+.zTreeMask {
+    background-color: #cfcfcf;
+}
+
+li.qry_cod {
+    border: 1px solid #2c7bae;
+}
+
+li.qry_cod:hover {
+    border-color: #ff4502;
+}
+
+li.qry_cod label.con_del {
+    color: #2c7bae;
+}
+
+li.qry_cod:hover label.con_del {
+    color: #ff4502;
+}
+
+span.rst_field {
+    border: 1px solid #2c7bae;
+}
+
+span.rst_field:hover {
+    border-color: #ff4502;
+}
+
+span.selected { /*background-color: #78ce32 !important;*/
+}
+
+label.rst_field_slt {
+    background: url("../blue/images/select.png") no-repeat 0 -19px;
+}
+
+span.selected label.rst_field_slt {
+    background: url("../blue/images/select.png") no-repeat !important;
+}
+
+/*可选择字段‘如条件检索下弹出框*/
+div.rst_group {
+    background-color: #f0f7fb;
+    border-bottom: 1px dotted #000000;
+}
+
+div.rst_field_cond {
+    border: 1px solid #ff4502;
+    background-color: #ffffff;
+}
+
+span.rst_field_cond_title {
+    border: 1px solid #ff4502;
+    background-color: #ffffff;
+}
+
+div.rst_field_cond span.val_opt {
+    background-color: #efefef;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+div.rst_field_cond span.order_opt {
+    background-color: #efefef;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+div.rst_field_cond span.val_selected {
+    background-color: #78ce32;
+}
+
+.mapPosition {
+    background: url('../blue/images/fullSc.png') no-repeat;
+}
+
+.mapPosition:hover {
+    background: url('../blue/images/fullSc.png') no-repeat -30px, 0px;
+}
+
+.triangle-up {
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid #2c7bae;
+}
+
+.triangle-right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #2c7bae;
+}
+
+.triangle-down {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #2c7bae;
+}
+
+.triangle-left {
+    border-top: 6px solid transparent;
+    border-right: 13px solid #2c7bae;
+    border-left: 16px solid transparent;
+    border-bottom: 9px solid transparent;
+}
+
+.item_switch {
+    background: url("../blue/images/panel/switch.png") no-repeat center;
+}
+
+.item_switch:hover {
+    background: url("../blue/images/panel/switch_on.png") no-repeat center;
+}
+
+/*日历*/
+#calendar {
+    border: 1px solid #B3E4EB;
+}
+
+#calendar .main {
+    background: #ffffff;
+}
+
+#calendar .head {
+    background: #EDF8FF;
+    border: 1px solid #BEE9F0
+}
+
+#calendar .body {
+    border: 1px solid #BEE9F0;
+}
+
+#calendar .foot {
+    background: #EDF8FF;
+    border: 1px solid #BEE9F0;
+}
+
+#calendar dt, #calendar dd, #calendar span {
+    border: 1px solid #fff;
+}
+
+#calendar dt {
+    color: #666666;
+}
+
+#calendar .days dd.other {
+    color: #6A6AFF
+}
+
+#calendar .days dd.slt {
+    background: #B3E4EB;
+    border: 1px solid #66CCCC;
+}
+
+#calendar .days dd:hover {
+    border: 1px solid #66CCCC;
+}
+
+#calendar .days dd.disabled {
+    background: #ccc;
+}
+
+#calendar .close {
+    border: 1px solid #CCC;
+}
+
+#calendar .clearBut, #calendar .okBut {
+    background-color: #CFEBEE;
+    border: 1px solid #38B1B9;
+    color: #08575B;
+    width: 40px;
+}
+
+#calendar .time {
+    background-color: #fff;
+}
+
+#calendar .time td {
+    border: 1px solid #61CAD0;
+}
+
+#calendar .time .up, #calendar .time .down {
+    border: 1px solid #BEE9F0;
+}
+
+#calendar .tm .hh, #calendar .tm .mm, #calendar .tm .ss {
+    border: 1px solid #A3C6C8;
+    background-color: #ffffc0;
+}
+
+#calendar .hh .hh, #calendar .mm .mm, #calendar .ss .ss {
+    display: block;
+}
+
+#calendar .tm .hh li:hover, #calendar .tm .mm li:hover, #calendar .tm .ss li:hover {
+    background: #B3E4EB;
+}
+
+/*数据加载中，刷新*/
+.progressBar {
+    border: solid 2px #86a5ad;
+    background: #FFF url(../blue/images/progressBar/progressBar_m.gif) no-repeat 10px 10px;
+}
+
+.background {
+    background: #FFF;
+}
+
+.alertBackground {
+    background: #FFF;
+}
+
+.dialogBackground {
+    background: #FFF;
+}
+
+/* suggest */
+#suggest ul {
+    background-color: #fff;
+    border: 1px solid #999;
+}
+
+#suggest li {
+    color: #000;
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+#suggest li.selected {
+    border: 1px solid #0a246a;
+    background-color: #b6bdd2
+}
+
+/*上传照片时的警告*/
+.docWarn {
+    color: red;
+    font-weight: bold;
+}
+
+div.img-wrap h2 {
+    background-color: #fdffc3;
+}
+
+div.img-wrap label span.remove {
+    background: #09F;
+    color: #fff;
+}
+
+span.removeX {
+    background: #09F;
+    color: #fff;
+}
+
+span.rhtCorner {
+    background: #f9fbff;
+    color: #fff;
+}
+
+.imgShadow {
+    background: url(../images/dot-opacity-bg-grey.png) repeat;
+}
+
+.imgDialog {
+    border: 1px solid #dfdfdf;
+    background: #fff;
+}
+
+.imgDialog .btnRight a {
+    background: url(../images/hd_sprite.png) no-repeat -270px -404px;
+    color: #2e99e6;
+}
+
+.imgDialog .btnLeft a {
+    background: url(../images/hd_sprite.png) no-repeat -189px -404px;
+    color: #2e99e6;
+}
+
+.imgDialog .close {
+    background: url(../images/icon-close.png) no-repeat;
+}
+
+.imgDialog .conceal {
+    background: url(../images/icon-hidden.png) no-repeat;
+}
+
+.imgDialog .reveal {
+    background: url(../images/icon-show.png) no-repeat;
+}
+
+div.pageChart {
+    border: 1px solid deepskyblue;
+}
+
+img.selected {
+    border: 2px solid #0000ff;
+}
+
+.qkeyword {
+    position: relative;
+    color: #fff;
+    border-color: #6AB625;
+    background-color: #6AB625;
+    padding: 5px 10px 5px 10px;
+}
+
+/*项目地图中的小十字形*/
+span.slt_move_icon {
+    background: url("../blue/images/mv_slt.png") no-repeat;
+}
+
+span.un_slt_move_icon {
+    background: url("../blue/images/mv_un_slt.png") no-repeat;
+}
+
+/*建筑信息,回迁房源里的图形*/
+table.build {
+    border-bottom: 1px solid #5fa4df;
+}
+
+table.build td {
+    border: 1px solid #5fa4df;
+}
+
+table.build th {
+    border: 1px solid #5fa4df;
+}
+
+table.build th.unit {
+    background: url("../images/floor.png") no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    color: white;
+}
+
+table.build th.floor, table.build td.floor {
+    background-color: #edf7ff;
+}
+
+table.build tr.data td {
+    border-bottom: 1px solid #c9c9c9;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+table.build tr.data td:last-child {
+    border-bottom: 1px solid #c9c9c9;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid #5fa4df !important;
+}
+
+table.build tr.data td:first-child {
+    border-bottom: 1px solid #c9c9c9;
+    border-top: none;
+    border-left: 1px solid #5fa4df;
+    border-right: none;
+}
+
+table.build tr.data td label {
+    border: 1px solid #efefef;
+}
+
+table.build tr.data td label:hover {
+    background-color: #c6bb81 !important;
+}
+
+table.build tr.data td label.used {
+    background-color: #ffff00;
+}
+
+table.build tr.data td label.selected {
+    background: url(images/icon-opt-btn.png) no-repeat center center;
+}
+
+#taskbar, #taskbar li, #taskbar li .taskbutton {
+    background: url(images/layout/taskbar.png) no-repeat;
+}
+
+#taskbar .close, #taskbar .restore, #taskbar .minimize {
+    background: url(images/layout/taskbar_icon.png) no-repeat;
+}
+
+#taskbar li .taskbutton span {
+    color: #FFF;
+}
+
+#taskbar .taskbarLeft, #taskbar .taskbarRight {
+    background: url(images/layout/taskbar_control.png) no-repeat;
+}
+
+/*自定义查询*/
+.retrievalContent {
+    background: url(../../themes/blue/images/tianjiatuli.png) no-repeat 0 5px;
+}
+
+.screeningConditions {
+    background: url(../../themes/blue/images/sxtiaojian.png) no-repeat 0;
+}
+
+/* 自动补全 */
+.acResults {
+    border: 1px solid #5fa4df;
+    border-top: 0px;
+}
+
+.acSelect {
+    background-color: #89C5EC;
+    color: HighlightText;
+}
+
+/*项目资料*/
+div.album-list li.album-li:hover {
+    background-color: #89C5EC;
+}
+
+/*收藏*/
+.tipm {
+    padding-top: 0px;
+}
+
+.tree-bars {
+    height: auto;
+    position: relative;
+}

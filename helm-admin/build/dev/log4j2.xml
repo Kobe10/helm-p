@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="debug" monitorInterval="5">
+    <!-- 定义变量参数 -->
+    <properties>
+        <!--日志输出目录-->
+        <Property name="logDir">/home/eland/tomcat-development/logs</Property>
+    </properties>
+    <!-- 定义日志输出位置 -->
+    <appenders>
+        <!-- 输出日志到控制台 -->
+        <Console name="CON_OUT">
+            <PatternLayout pattern="%d [%-5p][%24c{1}:%-3L] %m%n%throwable" charset="GBK"/>
+        </Console>
+        <!--每个月的日志文件会被自动归档-->
+        <RollingFile name="ERROR_FILE" fileName="${logDir}/app_error.log"
+                     filePattern="${logDir}/app_error.%d{yyyy-MM-dd}.log">
+            <!--日志输出格式-->
+            <PatternLayout pattern="%d [%-5p][%24c{1}:%-3L] %m%n%throwable"/>
+            <!--这里的1是一天而不是一小时-->
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <!--过滤日志级别，匹配ERROR，其他拒绝-->
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+        </RollingFile>
+        <!--异步输出日志-->
+        <Async name="ASYNC_OUT">
+            <!--文件输出-->
+            <AppenderRef ref="ERROR_FILE"/>
+            <!--控制台输出-->
+            <appender-ref ref="CON_OUT"/>
+        </Async>
+    </appenders>
+
+    <!--类输出控制-->
+    <loggers>
+        <logger name="com.shfb.oframe.core.util.spring" level="DEBUG"/>
+        <!--默认为DEBUG级别-->
+        <root level="INFO">
+            <appender-ref ref="ASYNC_OUT"/>
+        </root>
+    </loggers>
+</configuration>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+   配置说明：
+   主要分为两部分内容: 缓存引擎：cacheEngine，定义存储缓存内容信息,CacheItem，定义缓存的项目
+   缓存引擎配置说明：
+        1、engineName：必须 缓存引擎名字在，cacheEngines中必须唯一
+        2、implClass：必须 缓存引擎实现类，要求实现com.oframe.core.util.cache.ICache接口
+        3、engineDesc 可选 缓存引擎描述信息
+        4、params：缓存引擎初始化时候传递的参数
+   缓存项目配置说明：
+        1、cacheName：必须 缓存大类，在CacheItems内必须唯一
+        2、engineName： 必须 缓存大类使用的主缓存引擎
+        3、params：缓存项目配置参数，各个缓存引擎初始化时候可以获取该参数，
+            注意：参数名称以cacheEngine开头的参数将作为内部使用，用于定义缓存的多级缓存，可以定义多个多级缓存
+            多级缓存说明：主缓存又称为一级缓存，主要存储到本机；二级缓存主要是非本机缓存用于加快缓存的加装速度。
+                           保存一个项目时候会将缓存信息保存到配置的所有基本的缓存引擎中
+                           读取一个项目时候优先读取主缓存，不能再读取二级缓存中的内容，如果从二级缓存中读取到内容则将缓存信息
+                           保存到本地主缓存以加快下次读取速度
+
+    ehcache引擎缓存可用参数说明：
+        1、cacheTemplateName 使用的ehache模板（ehcache.xml)中配置
+        2、maxBytesLocalOffHeap 大类使用的最大非栈内存大小
+        3、maxBytesLocalHeap 大类使用的最大堆内存大小
+-->
+<CacheManagerInfo>
+    <CacheEngines>
+        <CacheEngine>
+            <engineName>ehcache</engineName>
+            <implClass>com.shfb.oframe.core.util.cache.ehcache.EhCacheEngine</implClass>
+            <engineDesc>Ehcache 缓存实现</engineDesc>
+            <params>
+                <param name="configFile" value="/ehcache.xml"/>
+            </params>
+        </CacheEngine>
+        <CacheEngine>
+            <engineName>hashcache</engineName>
+            <implClass>com.shfb.oframe.core.util.cache.hashcache.SimpleCacheEngine</implClass>
+            <engineDesc>基于内存的HashMap缓存</engineDesc>
+        </CacheEngine>
+        <CacheEngine>
+            <engineName>fileCache</engineName>
+            <implClass>com.shfb.oframe.core.util.cache.file.FileCacheEngine</implClass>
+            <engineDesc>基于文件的序列化缓存实现</engineDesc>
+            <params>
+                <param name="cacheFolder" value="webroot:..\\fileCache"/>
+            </params>
+        </CacheEngine>
+        <CacheEngine>
+            <engineName>emptyCache</engineName>
+            <implClass>com.shfb.oframe.core.util.cache.empty.EmptyCacheEngine</implClass>
+            <engineDesc>不缓存配置</engineDesc>
+        </CacheEngine>
+    </CacheEngines>
+    <CacheListeners>
+        <CacheListener>
+            <listenerName>cacheListener</listenerName>
+            <implClass>com.shfb.oframe.core.web.listener.CacheListenerImpl</implClass>
+            <listenerDesc>对缓存信息监听处理的实现</listenerDesc>
+            <params>
+                <!--清理任务调度执行的时间，默认1秒，单位 秒 -->
+                <param name="scheTimerTime" value="2"/>
+            </params>
+        </CacheListener>
+    </CacheListeners>
+    <CacheItems>
+        <!--
+            系统配置数据，每个主机一份，使用默认缓存模板
+            缓存策略：当前主机内存及磁盘文件
+            内存置换策略：较少使用（LFU）
+         -->
+        <CacheItem>
+            <cacheName>CONFIG_CACHE</cacheName>
+            <engineName>hashcache</engineName>
+            <cacheDesc>缓存properties及xml配置文件</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>FILE_MODIFY_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>缓存JS、CSS文件最近修改时间</cacheDesc>
+        </CacheItem>
+
+        <!-- 业务规则缓存 -->
+        <CacheItem>
+            <cacheName>SCRIPT_RULE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>规则管理</cacheDesc>
+            <params>
+                <param name="cacheTemplateName" value="scritpCacheTemplate"/>
+            </params>
+        </CacheItem>
+
+        <!--控制层脚本缓存-->
+        <CacheItem>
+            <cacheName>SCRIPT_CONTROL_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>控制层脚本缓存</cacheDesc>
+            <params>
+                <param name="cacheTemplateName" value="scritpCacheTemplate"/>
+            </params>
+        </CacheItem>
+        <!-- 登录相关信息 -->
+        <!--
+            用户登录Session信息
+            缓存策略：本机 + 共享内存
+            清理策略：1个小时不使用自动清理
+        -->
+        <CacheItem>
+            <cacheName>SESSION_INFO</cacheName>
+            <engineName>ehcache</engineName>
+            <defaultExpireTime>3600</defaultExpireTime>
+            <cacheDesc>Session信息，缓存主键用户登录流水</cacheDesc>
+            <params>
+                <param name="cacheEngineLevel2" value="fileCache"/>
+            </params>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>STAFF_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <defaultExpireTime>6000</defaultExpireTime>
+            <cacheDesc>缓存工号的角色，项目信息</cacheDesc>
+        </CacheItem>
+        <!--
+            用户登录Session信息
+            缓存策略：本机 + 共享内存
+            清理策略：1分钟不使用自动清理
+        -->
+        <CacheItem>
+            <cacheName>RANDOMWORD_INFO</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>验证码信息</cacheDesc>
+        </CacheItem>
+        <!--权限树缓存-->
+        <CacheItem>
+            <cacheName>RHT_TREE_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>权限树缓存</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>SYS_CFG_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>系统配置缓存</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>ROLE_TREE_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>角色树缓存</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>ORG_TREE_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>组织树缓存</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>PROJECT_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>项目配置数据缓存</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>PRJ_INIT_ENTITY_CACHE</cacheName>
+            <engineName>hashcache</engineName>
+            <cacheDesc>系统实体缓存配置</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>PRJ_TREE_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>树缓存</cacheDesc>
+        </CacheItem>
+        <CacheItem>
+            <cacheName>SYS_FORM_CACHE</cacheName>
+            <engineName>ehcache</engineName>
+            <cacheDesc>表单及模版缓存</cacheDesc>
+        </CacheItem>
+    </CacheItems>
+</CacheManagerInfo>

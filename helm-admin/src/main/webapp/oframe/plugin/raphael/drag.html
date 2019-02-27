@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>生成楼宇</title>
+    <script type="text/javascript" src="../jquery/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="raphael-min.js"></script>
+    <script type="text/javascript" src="raphael.json.js"></script>
+    <script type="text/javascript" src="raphael.inline_text_editing.js"></script>
+    <script type="text/javascript" src="raphael.entity.js"></script>
+    <script type="text/javascript">
+        var R2 = null;
+        function repaint(jsonObj) {
+            R2.clear();
+            R2.fromJSON(jsonObj);
+            R2.setViewBox(0, 0, 620, 420, false)
+        }
+        window.onload = function () {
+            var project = new EntityContainer("holder01");
+            project.init();
+            new Entity(project, 1, 10, 10, 100, 20, 1, "南区");
+            new Entity(project, 2, 50, 50, 100, 20, 1, "北区");
+            // 相应删除事件
+            project.container.attr('tabindex', 1).keydown(function (event) {
+                var target = event.target;
+                if (event.keyCode == 46 && "INPUT" != $(target).prop("tagName")) {
+                    building.removeSelected();
+                }
+            });
+
+            var project02 = new EntityContainer("holder02");
+            project02.init();
+            new Entity(project02, 1, 10, 10, 100, 20, 1, "1号楼");
+            new Entity(project02, 2, 20, 10, 100, 20, 1, "2号楼");
+            new Entity(project02, 3, 30, 10, 100, 20, 1, "2号楼");
+            new Entity(project02, 4, 40, 10, 100, 20, 1, "3号楼");
+            new Entity(project02, 5, 50, 10, 100, 20, 1, "4号楼");
+            // 相应删除事件
+            project02.container.attr('tabindex', 1).keydown(function (event) {
+                var target = event.target;
+                if (event.keyCode == 46 && "INPUT" != $(target).prop("tagName")) {
+                    building.removeSelected();
+                }
+            });
+
+
+            project.dbclick = function (id) {
+                project.fromJson(project02.toJson());
+            }
+
+            // 楼宇
+            var building = new EntityContainer("holder03");
+            building.init();
+            var jsonObj = {"units": [
+                {"unitName": "A", "roomNum": 4},
+                {"unitName": "B", "roomNum": 2}
+            ], "floorNum": 10};
+
+            // 单元
+            var units = jsonObj.units;
+            var floorNum = jsonObj.floorNum;
+            // 获取总户数
+            var unNum = 0;
+            for (var i = 0; i < units.length; i++) {
+                var tempUnit = units[i];
+                unNum = unNum + tempUnit.roomNum;
+            }
+            var width = building.container.width() / unNum;
+            var height = building.container.height() / floorNum;
+
+            // 循环单元
+            var xRoomIdx = 0;
+            for (var i = 0; i < units.length; i++) {
+                var tempUnit = units[i];
+                // 循环房间
+                for (var k = 0; k < tempUnit.roomNum; k++) {
+                    // 循环楼层
+                    for (var j = 0; j < floorNum; j++) {
+                        var id = tempUnit.unitName + (floorNum - j) + k;
+                        var tempEntity = new Entity(building, id, xRoomIdx * width, height * j, width, height, 1, id);
+                    }
+                    xRoomIdx++;
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body style="text-align: center;">
+<div id="holder01" style="border:1px #0000FF solid;width:620px;height: 420px;"></div>
+<div id="holder02" style="border:1px #0000FF solid;width:620px;height: 420px;"></div>
+<div id="holder03" style="border:1px #0000FF solid;width:620px;height: 420px;"></div>
+</body>
+</html> 

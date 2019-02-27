@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="eland-web" default="js.compress">
+
+    <!-- properties *************************************************** -->
+    <property name="root" value="."/>
+    <property name="src" value="${root}/../../src/main/webapp/oframe/plugin/"/>
+    <property name="destdir" value="${root}/../../src/main/webapp/oframe/plugin/"/>
+    <property name="charset" value="utf-8"/>
+
+    <!-- Main targets ****************************************************** -->
+    <target name="js.concat">
+        <concat destfile='${destdir}/jquery/eland.jquery.debug.js' encoding="${charset}" outputencoding="${charset}">
+            <filelist id="coresourcefiles" dir="${src}">
+                <file name='jquery/jquery-1.7.2.min.js'/>
+                <file name='jquery/jquery.jqprint-0.3.js'/>
+                <file name="jquery/jquery.cookie.js"/>
+                <file name="jquery/jquery.validate.js"/>
+                <file name="jquery/jquery.bgiframe.js"/>
+            </filelist>
+        </concat>
+        <concat destfile='${destdir}/dwz/dwz.debug.js' encoding="${charset}" outputencoding="${charset}">
+            <filelist id="coresourcefiles" dir="${src}">
+                <file name='dwz/dwz.core.js'/>
+                <file name='dwz/dwz.util.date.js'/>
+                <file name="dwz/dwz.validate.method.js"/>
+                <file name="dwz/dwz.history.js"/>
+                <file name="dwz/dwz.accordion.js"/>
+                <file name="dwz/dwz.ui.js"/>
+                <file name="dwz/dwz.theme.js"/>
+                <file name="dwz/dwz.switchEnv.js"/>
+                <file name="dwz/dwz.alertMsg.js"/>
+                <file name="dwz/dwz.contextmenu.js"/>
+                <file name="dwz/dwz.navTab.js"/>
+                <file name="dwz/dwz.tab.js"/>
+                <file name="dwz/dwz.resize.js"/>
+                <file name="dwz/dwz.taskBar.js"/>
+                <file name="dwz/dwz.dialog.js"/>
+                <file name="dwz/dwz.dialogDrag.js"/>
+                <file name="dwz/dwz.barDrag.js"/>
+                <file name="dwz/dwz.drag.js"/>
+                <file name="dwz/dwz.sortDrag.js"/>
+                <file name="dwz/dwz.cssTable.js"/>
+                <file name="dwz/dwz.stable.js"/>
+                <file name="dwz/dwz.ajax.js"/>
+                <file name="dwz/dwz.pagination.js"/>
+                <file name="dwz/dwz.datepicker.js"/>
+                <file name="dwz/dwz.effects.js"/>
+                <file name="dwz/dwz.panel.js"/>
+                <file name="dwz/dwz.print.js"/>
+                <file name="dwz/dwz.regional.zh.js"/>
+            </filelist>
+        </concat>
+        <concat destfile='${destdir}/system/system.debug.js' encoding="${charset}" outputencoding="${charset}">
+            <filelist id="coresourcefiles" dir="${src}">
+                <file name='system/system.util.js'/>
+                <file name='system/system.ajax.js'/>
+                <file name='system/system.tip.js'/>
+                <file name='system/system.file.js'/>
+                <file name='system/system.leftmenu.js'/>
+                <file name='system/system.table.js'/>
+                <file name='system/system.check.js'/>
+                <file name='system/system.oframe.js'/>
+                <file name='system/system.list.js'/>
+            </filelist>
+        </concat>
+    </target>
+
+    <target name='js.compress' depends="js.concat">
+        <java jar="yuicompressor-2.4.8.jar" fork="true" failonerror="true" output='${destdir}/dwz/dwz.min.js'
+              logError="true">
+            <arg file='${destdir}/dwz/dwz.debug.js'/>
+        </java>
+        <java jar="yuicompressor-2.4.8.jar" fork="true" failonerror="true" output='${destdir}/jquery/eland.jquery.min.js'
+              logError="true">
+            <arg file='${destdir}/jquery/eland.jquery.debug.js'/>
+        </java>
+        <java jar="yuicompressor-2.4.8.jar" fork="true" failonerror="true" output='${destdir}/ueditor/ueditor.all.min.js'
+              logError="true">
+            <arg file='${destdir}/ueditor/ueditor.all.js'/>
+        </java>
+        <java jar="yuicompressor-2.4.8.jar" fork="true" failonerror="true" output='${destdir}/system/system.min.js'
+              logError="true">
+            <arg file='${destdir}/system/system.debug.js'/>
+        </java>
+    </target>
+
+</project>

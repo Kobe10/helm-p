@@ -1,0 +1,164 @@
+* {
+    margin                      : 0;
+    padding                     : 0;
+    -webkit-tap-highlight-color : black;
+    font-family                 : "Microsoft YaHei", Helvetica, Verdana, Arial, Tahoma, serif;
+}
+
+html {
+    font-size : 20px;
+}
+
+ul li {
+    list-style : none;
+}
+
+img {
+    border : none;
+}
+
+a {
+    text-decoration             : none;
+    -webkit-tap-highlight-color : black;
+}
+
+html, body {
+    position : relative;
+    width    : 100%;
+    height   : 100%;
+    overflow : auto;
+}
+
+body { font-size : .6rem; font-family : "Microsoft Yahei Font", serif }
+
+.header {
+    position   : fixed;
+    width      : 100%;
+    height     : 50px;
+    line-height: 50px;
+    background : #26388F;
+    z-index    : 2;
+}
+
+.header .close {
+    position  : absolute;
+    /*top       : .6rem;*/
+    left      : .4rem;
+    color     : #fff;
+    font-size : 20px;
+    z-index   : 1000;
+}
+
+.headerUser {
+    position   : absolute;
+    text-align : center;
+    width      : 100%;
+    height     : 100%;
+    font-size  : 20px;
+    /*top        : .6rem;*/
+    color      : #FFFFFF;
+}
+
+.container {
+    margin-top : 2rem;
+    width      : 100%;
+    height     : 100%;
+}
+
+/*320px格式 苹果4/5/5s */
+@media screen and ( min-width : 320px) {
+    html {
+        font-size : 20px;
+    }
+}
+
+/*360px格式*/
+@media screen and ( min-width : 359px) {
+
+    html {
+        font-size : 22.5px;
+    }
+
+}
+
+/*375px格式 苹果6*/
+@media screen and ( min-width : 374px) {
+
+    html {
+        font-size : 23.5px;
+    }
+
+}
+
+/*383px格式 Nexus 6 LG Optimus G*/
+@media screen and ( min-width : 383px) {
+    html {
+        font-size : 24.5px;
+    }
+
+}
+
+/*399px galaxyNote*/
+@media screen and ( min-width : 399px) {
+    html {
+        font-size : 25.5px;
+    }
+
+}
+
+/*414px 苹果6plus*/
+@media screen and ( min-width : 414px) {
+
+    html {
+        font-size : 26px;
+    }
+
+}
+
+/*424px  LG 4X */
+@media screen and ( min-width : 423px) {
+    html {
+        font-size : 26.5px;
+    }
+
+}
+
+/*480px MT27i Xperia sola*/
+@media screen and ( min-width : 479px) {
+    html {
+        font-size : 30px;
+    }
+
+}
+
+/*540px Droid3/4/Razr Atrix 4g*/
+@media screen and ( min-width : 539px) {
+    html {
+        font-size : 34px;
+    }
+
+}
+
+/*600px Droid3/4/Razr Atrix 4g*/
+@media screen and ( min-width : 599px) {
+    html {
+        font-size : 37.5px;
+    }
+
+}
+
+/*640px*/
+@media screen and ( min-width : 639px) {
+    html {
+        font-size : 40px;
+    }
+
+}
+
+/*800px*/
+@media screen and ( min-width : 799px) {
+    html {
+        font-size : 50.5px;
+    }
+
+}

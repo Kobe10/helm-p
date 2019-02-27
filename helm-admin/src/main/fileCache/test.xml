@@ -1,0 +1,16 @@
+<Response>
+    <TcpCont>
+        <Response>
+            <RspCode>0000</RspCode>
+            <RspTime>20180920175326</RspTime>
+        </Response>
+        <SvcName>queryService</SvcName>
+        <SvcBusi>query</SvcBusi>
+    </TcpCont>
+    <SvcCont>
+        <Operation>
+            <OpName>MAP_DATE_QUERY_CMPT</OpName>
+            <Data>{&quot;mapDataInfo&quot;:[{&quot;data1&quot;:&quot;测试导入&quot;}]}</Data>
+        </Operation>
+    </SvcCont>
+</Response>

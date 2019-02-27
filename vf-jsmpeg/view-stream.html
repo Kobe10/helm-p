@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JSMpeg Stream Client</title>
+    <style type="text/css">
+        html, body {
+            background-color: #111;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<div style="margin-bottom: 10px;">
+    <span style="color: white;">播放地址：</span><input type="text" style="width: 500px;" id="videoUrl" value="ws://192.168.1.200/vf-jsmpeg/199">
+    <button onclick="changeViede()">确定</button>
+</div>
+<div>
+    <canvas style="width: 800px; height: 600px;" id="video-canvas"></canvas>
+</div>
+<script type="text/javascript" src="jsmpeg.min.js"></script>
+<script type="text/javascript">
+    var player
+    function changeViede() {
+        if(player) {
+            player.destroy()
+        }
+        var canvas = document.getElementById('video-canvas');
+        var url = document.getElementById("videoUrl").value;
+        player = new JSMpeg.Player(url, {canvas: canvas});
+    }
+</script>
+</body>
+</html>

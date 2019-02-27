@@ -1,0 +1,66 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true">
+    <!-- 配置说明
+      diskStore: 临时文件存放位置
+             user.home – 用户主目录
+             user.dir      – 用户当前工作目录
+             java.io.tmpdir – 默认临时文件路径
+             webroot:xxxx/xxx - 相对于工程路径的目录
+             classpath:xxxx/xxx - classpath文件路径
+             xxxx/xxxx/xx: -绝对路径
+      maxElementsInMemory: 在本地java堆中的最大对象数量
+      maxElementsOnDisk: 在本地磁盘存储的对象最大数量
+      maxBytesLocalHeap: 占用本地堆内存大小
+      maxBytesLocalOffHeap：占用本地非堆内存大小
+      maxBytesLocalDisk：本地磁盘存储大小
+      - 溢出处理方法
+      overflowToOffHeap：堆内存不够使用非堆内存
+      overflowToDisk: 非堆内存不够存储到磁盘
+      -过期处理
+      eternal: 是否不过期
+      timeToLive：最大存活时间(单位秒)
+      timeToIdle：最大空闲时间(单位秒)
+      memoryStoreEvictionPolicy：对象在堆内存中的置换策略
+      diskExpiryThreadIntervalSeconds:磁盘对象过期监控周期(单位秒)
+      -读写控制
+      copyOnRead: 读取时返回对象的副本
+      copyOnWrite:写入时新建副本写入
+    -->
+    <!--
+    	 user.home – 用户主目录   
+         user.dir      – 用户当前工作目录   
+         java.io.tmpdir – 默认临时文件路径
+     -->
+    <diskStore path="webroot:ehcache"/>
+
+    <!--
+         maxElementsInMemory 缓存最大数目
+         eternal				缓存是否持久  如果为 true timeToIdleSeconds timeToLiveSeconds 就没什么作用了
+         timeToIdleSeconds   当缓存闲置N秒后销毁
+         timeToLiveSeconds	当缓存存活N秒后销毁
+         overflowToDisk		是否保存到磁盘，当系统宕机时
+         maxElementsOnDisk   默认为0，无限多。ehcache_failsafe.xml为10000000
+         diskExpiryThreadIntervalSeconds 使用过期算法清除磁盘中失效对象的间隔，默认为120秒。　
+         diskSpoolBufferSizeMB  默认为30M。
+         diskPersistent	是否持久化磁盘缓存
+      -->
+
+    <!-- 默认内存   使用 内存+ 磁盘  方式进行缓存 -->
+    <defaultCache
+            maxEntriesLocalHeap="20000"
+            eternal="true"
+            memoryStoreEvictionPolicy="LFU"
+            overflowToDisk="true"
+            />
+
+    <!-- 自定义内存cache模板 ,  仅使用内存方式缓存 -->
+    <cache name="scritpCacheTemplate"
+           maxEntriesLocalHeap="20000"
+           eternal="false"
+           memoryStoreEvictionPolicy="LFU"
+           overflowToDisk="false"
+           timeToIdleSeconds="36000"
+     />
+</ehcache>

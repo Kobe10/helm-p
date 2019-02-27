@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Rows>
+    <Row>
+        <!--通用图层数据-->
+        <LayerType>1</LayerType>
+        <!--扩展图层对应的实体名称-->
+        <EntityName>CamDataInfo</EntityName>
+        <!--扩展实体主键-->
+        <EntityId>camId</EntityId>
+        <!--扩展实体对应编码-->
+        <EntityCd>camCd</EntityCd>
+        <!--扩展实体查询名称字段-->
+        <EntityQueryName>name</EntityQueryName>
+        <!--扩展实体查询地址字段-->
+        <EntityQueryValue>addr</EntityQueryValue>
+    </Row>
+    <Row>
+        <!--扩展图层类型 从2开始 依次递增-->
+        <LayerType>2</LayerType>
+        <!--扩展图层对应的实体名称-->
+        <EntityName>CamDataInfo</EntityName>
+        <!--扩展实体主键-->
+        <EntityId>camId</EntityId>
+        <!--扩展实体对应编码-->
+        <EntityCd>camCd</EntityCd>
+        <!--扩展实体查询名称字段-->
+        <EntityQueryName>camName</EntityQueryName>
+        <!--扩展实体查询地址字段-->
+        <EntityQueryValue>camTag</EntityQueryValue>
+    </Row>
+</Rows>

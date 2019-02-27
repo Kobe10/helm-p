@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Precision>
+    <Ptz>
+        <x>0.01</x>
+        <y>0.01</y>
+    </Ptz>
+    <Zoom>
+        0.01
+    </Zoom>
+</Precision>

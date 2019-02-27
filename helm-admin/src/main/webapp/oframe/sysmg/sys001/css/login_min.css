@@ -1,0 +1,36 @@
+.containner{ width: 100%}
+.logo{ background:url(../images/main-logo_03.png)no-repeat; margin-top: 20px; height:100px; background-position: center center;background-size: 80%;}
+#slides{display: none !important;}
+.login-box{ width:318px; min-height:320px; border:1px solid #d6d6d6; border-radius:5px; background-color:#fff;  margin-right:auto; margin-left:auto;margin-top: 20px;float: none;}
+.login-box h4{ text-align:center; line-height:52px; font-size:24px; color:#559ece; border-bottom:1px solid #d6d6d6; font-weight:400;}
+.wrapper{ padding:0 23px;}
+.form-group{ margin-top:20px; position:relative;}
+.form-group label{ background-image:url(../images/icon-login.png); background-repeat:no-repeat; position:absolute; width:22px; height:22px; display:block; left:5px; top:6px; }
+.form-group .icon-1{ background-position:2px -5px;}
+.form-group .icon-2{ background-position:2px -40px;}
+.form-group .icon-3{ background-position:2px -74px;}
+.form-control{ padding:10px 30px 6px 40px; vertical-align: middle; line-height:22px; height:34px; font-size:14px; box-sizing:border-box; width:100%; border:1px solid #bbb;}
+.form-control-error{ border-color:#df3f3f;}
+.dropdown{padding:0 20px 0 40px; line-height:22px; font-size:14px; box-sizing:border-box; width:100%; border:1px solid #bbb; background-color:transparent; position:relative;}
+.dropdown-menu{ position:absolute; width:100%; border:1px solid #bbb; left:-1px; top:34px;z-index: 2; display:none;}
+.dropdown .dropdown-toggle{ width:100%; height:34px; padding:0; border:none; background:none; text-align:left;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; display:block;}
+.dropdown-menu a{ display:block; padding-left:10px; padding-right:10px; width:100%; box-sizing:border-box; line-height:34px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.dropdown-menu a:hover{ text-decoration:none; background:#39F; color:#fff;}
+.dropdown-menu .on a{text-decoration:none; background:#39F; color:#fff;}
+.dropdown-toggle:focus{ outline:none;}
+.caret {display: block;width: 0;height: 0;margin-left: 2px;vertical-align: middle;border-top: 5px solid;border-right: 5px solid transparent;
+    border-left: 5px solid transparent; cursor:pointer; position:absolute; right:10px; top:15px;}
+.form-control:focus{ border-color:#4495ca; outline:none; background:none;}
+.btn-block{ width:100%; display:block;}
+.btn{ height:42px; display:inline-block; background:none; font-size:18px; color:#fff; border:none; vertical-align:middle; cursor:pointer;font-family:"Microsoft YaHei", Arial, SimSun;}
+.btn:focus{ outline:none;}
+.btn-primary{ background:#569ece;}
+.btn-primary:hover{ background:#5caee5; border:none;}
+.btn-primary:active{ background:#3b8ec6;}
+
+.page-footer{ background-color:#d8d8d8; line-height:69px; text-align:center; position:absolute; bottom:0; left:0; width:100%;}
+
+.error-tips{ color:#df3f3f; line-height:24px; text-align:left; position:absolute; bottom:-20px; left:0;}
+
+#validate{width: 76%;float: left;}
+#validateImg{width: 64px; height:34px; float: right;}
